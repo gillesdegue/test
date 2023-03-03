@@ -1,1 +1,1 @@
-sdqsdqsdqsdsqd
+Sous_classes_naf_rev2['sphere'] = Sous_classes_naf_rev2.apply(lambda row: "Tertiaire" if ajout_secteur_economique(row['Libelle_Sous_classes_etablissement'])=="Tertiaire", axis=1)
