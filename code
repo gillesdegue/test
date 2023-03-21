@@ -1,7 +1,4 @@
-j'ai une base de donne dpe_16_Decoupe contenant les champs ['numero_dpe', 'type_voie', 'nom_rue', 'numero_rue', 'commune', 'code_insee_commune']
-que je recupere et que je met dans autre dataframe.
-le probleme est qu'il y a parfois des numero de rue, des types de voie, des types d'appartement,numero d'appartement etc ... dans la colone numero_rue.
-je voudrais que tu me modifie le code ci-dessous pour les classes dans les bonnes colones. ajoute des colones a df si necessaire 
+import re
 
 # Définition de la fonction qui parcourt la base de données
 def parcourir_dpe(dpe):
@@ -18,230 +15,26 @@ def parcourir_dpe(dpe):
         commune = row['commune']
         code_insee_commune = row['code_insee_commune']
 
+        # Extraction du numéro de rue et du nom de rue
+        num_rue_regex = re.search(r'^(\d+\s*)?(.*)$', numero_rue)
+        num_rue = num_rue_regex.group(1)
+        nom_rue = num_rue_regex.group(2).strip()
+
+        # Extraction du type de voie
+        type_voie_regex = re.search(r'^(.*)\s+(?:AVENUE|AV|ALLEE|ALL|IMPASSE|IMP|RUE|PL|PLACE|BOULEVARD|BD|CHEMIN|CH|ROUTE|RP|TRONCON|QUAI|PONT)\b', nom_rue)
+        if type_voie_regex is not None:
+            type_voie = type_voie_regex.group(1).strip()
+
+        # Extraction du numéro d'appartement
+        num_app_regex = re.search(r'\b(?:(?:BAT|B|APPARTEMENT|APP)\s*(\S+)|N°\s*(\S+))\b', numero_rue)
+        if num_app_regex is not None:
+            num_app = num_app_regex.group(1) or num_app_regex.group(2)
+            num_rue = re.sub(num_app_regex.group(0), '', numero_rue).strip()
+        else:
+            num_app = ''
+
         # Ajout d'une ligne dans le nouveau DataFrame avec les valeurs récupérées
-        df.loc[index] = [numero_dpe, type_voie, nom_rue, numero_rue, commune, code_insee_commune]
+        df.loc[index] = [numero_dpe, type_voie, nom_rue, num_rue, commune, code_insee_commune, num_app]
 
     # Retour du nouveau DataFrame
     return df
-
-# Appel de la fonction avec la base de données "dpe"
-df = parcourir_dpe(dpe_16_Decoupe)
-
-# Affichage du nouveau DataFrame
-print(df)
-
-Voici a quoi resemble la colone numero_rue:
-    
-Le Hameau des Rossignols
-
-180 RUE ALFRED DE VIGNY
-14 RUE PIERRE ET MARIE CURIE
-Lehmann
-Waldeck ROUSSEAU
-Waldeck ROUSSEAU
-Waldeck ROUSSEAU
-de Montbron
-Chez Joubert
-des anciens combattants
-du pétureau
-de Clérac à Sillac
-Rue de Montbron
-Les allées du Jonco
-Lotissement ''Les Jésuites''
-46 Bis rue des Gots
-178 Rue de Paris
-
-de la Châtaigneraie - Bât. B - Appt N°69
-Lotissement des Sablières - Chez Veau
-Lotissement des Sablières - Chez Veau
-Lotissement Le Haut des Chateliers
-Lieudit Chez Les rois
-
-20 route de Médillac
-210 Chemin des Meuniers
-37 RUE DES GOTS
-37 RUE DES GOTS
-des Verdiers
-Saint Roch
-Pasteur
-de Périgueux
-des jonquilles
-Taillefer
-9 rue des Pièces à l'étang
-Henri Barret - Résidence Maine Brie 1 - Appt N°41
-de la Garenne - Résidence Les Essarts - Appt n°227
-
-des cinq journeaux
-de l'Hippodrome
-de l'union
-
-des Chateleaux - Les Frauds
-11 La Brousse
-
-
-François Villon
-196 RUE ALFRED DE VIGNY
-44 RUE DE LA BELLE ALLEE DU PETIT FRESQUET
-des Essarts - Escalier 8 - Appt n°91
-4 RUE DES VIEILLES VIGNES
-Jean Petit
-Les Jardins de la Palène
-de Lattre de Tassigny
-de l'Epineuil
-des Cheminées
-Jean batiste de la Péruse
-de l'Epineuil
-Cidex 179  route de Nersac
-Aenue Foch
-Résidence de la Boeme
-2 Bis rue de l'Avenir
-Jean Jaures
-Lotissement Les Petites Groies
-de l hippodrome
-du Clos
-de l'Eglise
-du Champ de la Fosse
-de Vouillac
-des Carreaux
-6 RUE MAURICE UTRILLO
-des Porches
-6 RUE DE LA GATINE RESIDENCE LE CLOS DE LA GATINE APPARTEMENT 24
-de Paris
-2
-de Chez Papin
-Route de l'Hermitage
-20 résid bois Boutin
-Henri Barret - Résidence Maine Brie 2 - Appt n°35
-de Saintes
-de l Epineuil
-du Bourg
-263 RUE EMILE ROUX
-des Carrières
-40 route de Breuty
-Résidence Les Estudines 98 Rue St Jean d'Angély
-539 (anciennement 23) Rue de la Vergnade
-RESIDENCE LES ESSARTS - APPT 128 ESCALIER 10 5 BIS CHEMIN DE GRELET
-89, avenue de la gare
-38 ROUTE DES BARBOTS
-de Chez Chagneau
-Le Grand Bois - Lot n°2
-10B  Impasse Paul Bert
-des Lignes
-DU CHAPEAU ROUGE
-10D rue Paul Bert
-
-10 RUE DES PRES DE LA FONTAINE
-10 RUE PIERRE LOTI
-2 PLACE SAINT PIERRE APPARTEMENT AU 1ER ETAGE
-2 PLACE ST PIERRE APPARTEMENT EN DUPLE
-des Groies
-du Rodin
-9 RUE DE BORDEAUX_lognt
-Rue des Gots N°6 Les Allées de Salomé
-des Sources
-Le Champs des Vignes
-22, impasse du Vélodrome
-Logis de Foulpougne
-7 route de chez Chagnaud
-10 RUE DU MIDI
-22 RUE CORLIEU
-16 BIS RUE DE LA MUTUALITE
-du Bourg
-Charles Petit
-20 rue de Québec
-7 allée Castaignes
-de BEAUMONT
-67, bd Aristide Briand - Studio N° 1 RDC
-257 AVENUE JEAN ANTOINE
-de la Republique
-67, bd Aristide Briand
-67, bd Aristide Briand - 2ème étage Studio n° 3
-67, bd Aristide Briand - 3ème étage Studio n° 4
-Lieu dit Bellevue Rue Jean Jaurès
-des Myosotis
-15 rue Flemming
-485 route de la Prévoterie
-22 RUE MONTREAL
-Nanteuillet
-du Cdt Berger
-Lot n°20 Bosquet de La Vallade
-de la Chaume
-de l'Eglise
-46 rue Jean Jaurès
-de la Gare
-Jean Jaurés
-18 Place de l'Hotel de Ville
-18 Place de l'Hotel de Ville
-Gambetta
-559 RUE HENRY MATTISSE
-de Montbron
-de Montbron
-de Montbron
-de Montbron
-des Trois Chênes
-135-137 RUE DE LA GRAND FONT APPT 13
-Louis Barthou
-du Maine   BRENAT
-RUE DES GROIES
-du Lion
-La Ponche
-de Bellevue
-29 BIS RUE DES ECOLES
-43 COTE DE BOURNET
-233 av de la République
-48 rue Louise Leriget
-15 r du Clos du Maine de Brie Appt n°20
-ancienne de Montmoreau
-137 BIS RUE DE LA LOIRE
-du Grand Poirier
-1 Place de la Liberté
-Résidence du treillac - Lot n°9
-d Iena
-31-33 RUE DE L'EPINEUIL MAISON CENTRE
-de la Gare
-Denis Papin
-Résidence Les Cardinaux Charente
-51 rue Parmentier
-17 Rue Tison d'Argence
-17 Rue Tison d'Argence
-87 BIS RUE DU CAPITAINE FAVRE
-5 AVENUE DE LA NOUERE
-Victor Hugo
-23 AVENUE DE LA REPUBLIQUE
-de Périgueux
-Emile Roux
-19 rue Jules Ferry
-17 Rue Tison d'Argence
-17 Rue Tison d'Argence
-Avenue Jean Jaurès
-40 Rue Madeleine à l'Etang
-37 rue Madeleine à l'Etang
-Lieu dit Les Ouches
-des Genins
-Rue des Violettes
-2 Chemin du Parc
-de la Chaume
-Emile Roux
-de Vars
-Lotist Les Jésuites - N°74
-de Clérac à Sillac
-26 Rue Roger Bonnet
-57 RUE DE PARIS
-249 AVENUE DE NAVARRE
-7 IMPASSE DE LA PUDILLE
-René Sardin
-17 Rue des Bosquets
-10 rue des 4 Eviers
-Les Andreaux - Les jardins de la Palene lot n°13
-du Général de Gaulle
-Résidence Le Grand Bois Lot n°12
-de Midi
-de Clérac à Sillac
-de Clérac à Sillac
-Laferriére
-25 rue Saint Ausone
-Appartement 1 - RDC - 29 rue Ulysse GAYON
-Appartement 2 - ETG.2 - 29 rue Ulysse GAYON
-Appartement 3 - ETG.3 - 29 rue Ulysse GAYON
-Appartement 4 - ETG.3 - 29 rue Ulysse GAYON
-Appartement 5 - Duplex - 29 rue Ulysse GAYON
