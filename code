@@ -1,3 +1,13 @@
+
+Regex Address Parsing Python.
+
+
+jillesdegue@gmail.com
+
+Regex for Address Parsing.
+
+
+jillesdegue@gmail.com
 ecrit moi une expression regex pour chacun des cas suivants:
 
 - si j'ai une phrase: 117 BIS AVENUE DE LA REPUBLIQUE APPT 2
@@ -13,3 +23,71 @@ je voudrais que tu enleve le lot et son numero
 - pour cette phrase 188 rue de la Grand Font  Apt. 1 - RDC enlever l'appartement est apt. et rdc veut dire rez de chaussée
 
 -  ici 153 bis rue de Paris, Logement 11 separer logement et son numero
+En python
+
+Voici les expressions régulières en Python pour chaque cas:
+
+Pour séparer "Appt" et le numéro d'appartement:
+python
+Copy code
+import re
+
+phrase = "117 BIS AVENUE DE LA REPUBLIQUE APPT 2"
+regex_appt = r"(?i)appt\.?\s*(\d+)"
+match = re.search(regex_appt, phrase)
+if match:
+    num_appt = match.group(1)
+    phrase = re.sub(regex_appt, "", phrase)
+    print(phrase.strip(), num_appt)
+else:
+    print("Pas de numéro d'appartement trouvé.")
+Pour séparer "etage" et le numéro d'étage:
+python
+Copy code
+import re
+
+phrase = "6 ROUTE D'AGRIS 2EME ETAGE"
+regex_etage = r"(\d+)(?:eme)?\s+(?i)etage"
+match = re.search(regex_etage, phrase)
+if match:
+    num_etage = match.group(1)
+    phrase = re.sub(regex_etage, "", phrase)
+    print(phrase.strip(), num_etage)
+else:
+    print("Pas de numéro d'étage trouvé.")
+Pour enlever "lot" et son numéro:
+python
+Copy code
+import re
+
+phrase = "178 BOULEVARD DE LA REPUBLIQUE LOT 1"
+regex_lot = r"(?i)lot\s*\d+"
+phrase = re.sub(regex_lot, "", phrase)
+print(phrase.strip())
+Pour enlever "Apt." et interpréter "RDC" comme rez-de-chaussée:
+python
+Copy code
+import re
+
+phrase = "188 rue de la Grand Font Apt. 1 - RDC"
+regex_appt = r"(?i)apt\.?\s*\d+"
+regex_rdc = r"(?i)rdc"
+phrase = re.sub(regex_appt, "", phrase)
+phrase = re.sub(regex_rdc, "rez-de-chaussée", phrase)
+print(phrase.strip())
+Pour séparer "Logement" et son numéro:
+python
+Copy code
+import re
+
+phrase = "153 bis rue de Paris, Logement 11"
+regex_logement = r"(?i)logement\s+(\d+)"
+match = re.search(regex_logement, phrase)
+if match:
+    num_logement = match.group(1)
+    phrase = re.sub(regex_logement, "", phrase)
+    print(phrase.strip(), num_logement)
+else:
+    print("Pas de numéro de logement trouvé.")
+
+
