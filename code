@@ -1,40 +1,15 @@
-import re
+ecrit moi une expression regex pour chacun des cas suivants:
 
-# Définition de la fonction qui parcourt la base de données
-def parcourir_dpe(dpe):
-    # Création du nouveau DataFrame
-    df = pd.DataFrame(columns=['numero_dpe', 'type_voie', 'nom_rue', 'numero_rue', 'commune', 'code_insee_commune'])
+- si j'ai une phrase: 117 BIS AVENUE DE LA REPUBLIQUE APPT 2
+je voudrais separe appt et ne numero de l'appartement qui est 2 dans ce cas precis du reste de la chaine de caractere
+tout en sachant que le numero de l'appartement vient toujours apres "appt" et que parfois il n y a pas de chiffre appt est parfois ecrit " Appt."
 
-    # Parcours de la base de données
-    for index, row in dpe.iterrows():
-        # Récupération des valeurs des colonnes pour chaque ligne
-        numero_dpe = row['numero_dpe']
-        type_voie = row['type_voie']
-        nom_rue = row['nom_rue']
-        numero_rue = row['numero_rue']
-        commune = row['commune']
-        code_insee_commune = row['code_insee_commune']
+- si j'ai une phrase 6 ROUTE D'AGRIS 2EME ETAGE je voudrais separer etage du numero qui peut etre juste le chiffre
+ou etre accompagné de "eme" sachant que le numero de l'etage vient parfois avant "etage" et parfois apres.
 
-        # Extraction du numéro de rue et du nom de rue
-        num_rue_regex = re.search(r'^(\d+\s*)?(.*)$', numero_rue)
-        num_rue = num_rue_regex.group(1)
-        nom_rue = num_rue_regex.group(2).strip()
+- en tenant compte de ce j'ai dit plus haut, si j'ai une phrase 178 BOULEVARD DE LA REPUBLIQUE LOT 1
+je voudrais que tu enleve le lot et son numero
 
-        # Extraction du type de voie
-        type_voie_regex = re.search(r'^(.*)\s+(?:AVENUE|AV|ALLEE|ALL|IMPASSE|IMP|RUE|PL|PLACE|BOULEVARD|BD|CHEMIN|CH|ROUTE|RP|TRONCON|QUAI|PONT)\b', nom_rue)
-        if type_voie_regex is not None:
-            type_voie = type_voie_regex.group(1).strip()
+- pour cette phrase 188 rue de la Grand Font  Apt. 1 - RDC enlever l'appartement est apt. et rdc veut dire rez de chaussée
 
-        # Extraction du numéro d'appartement
-        num_app_regex = re.search(r'\b(?:(?:BAT|B|APPARTEMENT|APP)\s*(\S+)|N°\s*(\S+))\b', numero_rue)
-        if num_app_regex is not None:
-            num_app = num_app_regex.group(1) or num_app_regex.group(2)
-            num_rue = re.sub(num_app_regex.group(0), '', numero_rue).strip()
-        else:
-            num_app = ''
-
-        # Ajout d'une ligne dans le nouveau DataFrame avec les valeurs récupérées
-        df.loc[index] = [numero_dpe, type_voie, nom_rue, num_rue, commune, code_insee_commune, num_app]
-
-    # Retour du nouveau DataFrame
-    return df
+-  ici 153 bis rue de Paris, Logement 11 separer logement et son numero
