@@ -1,1 +1,18 @@
-http://memoires.scd.univ-tours.fr/EPU_DA/LOCAL/2013PFE_HautinFlorence.pdf
+data = {'numero_dpe': [], 'type_voie': [],'nom_rue': [],'numero_rue': [],'commune': [],'code_insee_commune': []}  
+df = pd.DataFrame(data)
+
+def has_numbers(inputString):
+    #verifie si il y a un chiffre dans l'adresse
+    return any(char.isdigit() for char in inputString)
+
+def recuperation_adresse_correct(ligne):
+    global df
+    #verifie si il y a un chiffre dans l'adresse
+    
+    if has_numbers(ligne['nom_rue']) == False:
+        dictionnaire = {'numero_dpe': ligne["numero_dpe"] , 'type_voie': ligne["type_voie"] , 'nom_rue': ligne["nom_rue"] , 'numero_rue': ligne["numero_rue"] , 'commune': ligne["commune"]  ,'code_insee_commune': ligne["code_insee_commune"]}
+        data = pd.Series([dictionnaire])
+        df = df.append(data)
+    else:
+        pass
+    return  data
