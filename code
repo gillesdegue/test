@@ -1,7 +1,7 @@
-import pandas as pd
-
-# Chargement de la base de données
-dpe = pd.read_csv('chemin/vers/dpe.csv')
+j'ai une base de donne dpe_16_Decoupe contenant les champs ['numero_dpe', 'type_voie', 'nom_rue', 'numero_rue', 'commune', 'code_insee_commune']
+que je recupere et que je met dans autre dataframe.
+le probleme est qu'il y a parfois des numero de rue, des types de voie, des types d'appartement,numero d'appartement etc ... dans la colone numero_rue.
+je voudrais que tu me modifie le code ci-dessous pour les classes dans les bonnes colones. ajoute des colones a df si necessaire 
 
 # Définition de la fonction qui parcourt la base de données
 def parcourir_dpe(dpe):
@@ -25,7 +25,3024 @@ def parcourir_dpe(dpe):
     return df
 
 # Appel de la fonction avec la base de données "dpe"
-df = parcourir_dpe(dpe)
+df = parcourir_dpe(dpe_16_Decoupe)
 
 # Affichage du nouveau DataFrame
 print(df)
+
+Voici a quoi resemble la colone numero_rue:
+    
+Le Hameau des Rossignols
+Le Hameau des Rossignols
+Le Hameau des Rossignols
+Le Hameau des Rossignols
+Le Hameau des Rossignols
+Le Hameau des Rossignols
+Le Hameau des Rossignols
+Le Hameau des Rossignols
+Le Hameau des Rossignols
+Le Hameau des Rossignols
+Le Hameau des Rossignols
+Le Hameau des Rossignols
+Le Hameau des Rossignols
+Le Hameau des Rossignols
+Résidence de la Boëme
+180 RUE ALFRED DE VIGNY
+14 RUE PIERRE ET MARIE CURIE
+Lehmann
+Waldeck ROUSSEAU
+Waldeck ROUSSEAU
+Waldeck ROUSSEAU
+de Montbron
+Chez Joubert
+des anciens combattants
+du pétureau
+de Clérac à Sillac
+Rue de Montbron
+Les allées du Jonco
+Lotissement ''Les Jésuites''
+46 Bis rue des Gots
+178 Rue de Paris
+du terrier de Bourguignolle
+de Basseau
+Sous le Bourg
+des Hirondelles
+de la Loire
+Georges Clémenceau
+de Vaugeline
+Corderant
+de la Source
+Jacques Brel
+Jean Jaures
+, du Haut Champ Blanc
+Wilson
+Maison Neuve
+sous les Vignes
+des Figuiers
+Camille Pelletan
+de Montbron
+Boissier descombes
+des Seguins
+des seguins
+de la Châtaigneraie - Bât. B - Appt N°69
+Lotissement des Sablières - Chez Veau
+Lotissement des Sablières - Chez Veau
+Lotissement Le Haut des Chateliers
+Lieudit Chez Les rois
+Montcalm
+Lotissement des Sablières
+de la Combe Garnier
+Gerorges Lautrette - Résidence Le Fromonger - Appt N°21
+Emile Ajar
+Résidence  Les Jésuites
+Résidence  Les jésuites
+20 route de Médillac
+210 Chemin des Meuniers
+37 RUE DES GOTS
+37 RUE DES GOTS
+des Verdiers
+Saint Roch
+Pasteur
+de Périgueux
+des jonquilles
+Taillefer
+9 rue des Pièces à l'étang
+Henri Barret - Résidence Maine Brie 1 - Appt N°41
+de la Garenne - Résidence Les Essarts - Appt n°227
+des Lilas
+Jules Ferry
+Les Girards
+Genevieve de Gaulle
+Paul Bernard
+Paul Bernard
+des cinq journeaux
+de l'Hippodrome
+de l'union
+des Léchères
+Marguerite de valois
+Berthelot - Résidence Saint Martial - Bât. Valois - Appt n°9
+des Arbousiers
+basse
+Alfred de Vigny
+des Loriots
+des Rocs bergers
+Le Champ des Vignes
+Henri Dunant
+des Chateleaux - Les Frauds
+11 La Brousse
+de Veuze
+des Fours a Chaux
+de Vars
+de la Croix de la Fosse
+des Marais de la Perche
+de la Chapelle
+, Le Hameau des Vignes Chez Garonne
+du Souvenir
+de la Croix
+Chabernaud
+Paul Abbadie
+du Parc
+des Coteaux
+Jules Durandeau
+Le Portail Jonquet
+de Limoges
+Georges Biset  VILLEMENT
+Orée de la Braconne
+de Paris
+du G.de Gaulle
+de la Tourgarnier
+9 rue des Pièces à l'étang
+des Nesmonds
+Auguste Herbin
+de la Croix Brandet
+des Rossignols
+30 bis Rue du Capitaine Favre
+Pouyaud
+du Général De Gaulle
+du Perchet
+Marie-Charlotte de France Les Giraudières
+d' Austerlitz
+, Guynemer
+de Montbron
+Jules Verne
+du Mas de La PierreLevée
+2 rue Louise Leriget
+2 rue Louise Leriget
+2 rue Louise Leriget
+Charles Petit
+Gambetta
+des Coquelicots
+de Périgueux
+Les Jardins de la Palène
+François Villon
+196 RUE ALFRED DE VIGNY
+44 RUE DE LA BELLE ALLEE DU PETIT FRESQUET
+des Essarts - Escalier 8 - Appt n°91
+4 RUE DES VIEILLES VIGNES
+Jean Petit
+Les Jardins de la Palène
+de Lattre de Tassigny
+de l'Epineuil
+des Cheminées
+Jean batiste de la Péruse
+de l'Epineuil
+Cidex 179  route de Nersac
+Aenue Foch
+Résidence de la Boeme
+2 Bis rue de l'Avenir
+Jean Jaures
+Lotissement Les Petites Groies
+de l hippodrome
+du Clos
+de l'Eglise
+du Champ de la Fosse
+de Vouillac
+des Carreaux
+6 RUE MAURICE UTRILLO
+des Porches
+6 RUE DE LA GATINE RESIDENCE LE CLOS DE LA GATINE APPARTEMENT 24
+de Paris
+22 Grande Rue
+Le clos de la Vallade
+Résidence les Pins 2
+de la Loire
+3 route de Condé
+de la Loire
+des Grives
+Le Brisset
+de Chicoutimi
+Saint Roch
+du champ de foire
+de Montbron
+Des Agriers, Les Riffauds
+de Chantefleurs
+d'Alexandrie
+Jean Louis Guez de Balzac
+Gaudichaud
+des carrières
+de la Chenaie
+de Puits Marot
+de Nersac
+de l'Epinette
+6 IMPASSE DU TROPIC
+de l'Anguille
+Louis Pergaud
+des Chennevières
+Adolphe Chadouteau
+Lot A ''Les Mornats''
+Charles Moraud
+8 BIS RUE DES LONGEES
+Jean Moulin
+des Moulins - Appt Rdc Droit
+Aramis
+de Vars
+Victor Hugo
+de Pisany - Lot n°3
+Jean Antoine
+des Fougères
+Corneille
+Corneille
+du Maréchal Fayolle
+Ulysse Gayon
+Jules Verne
+Lotissement le Champ-Goumeau
+de Pisany - Lot n°4
+des Figuiers
+Lotissement les Agriers
+Jean Charcot
+Froide le Bourg
+54 RUE FONTAINE DU LIZIER
+Delivertoux
+de Nersac
+Delivertoux
+Chez Biret
+de Vars
+de Vars
+des Quatre Saisons
+bat Alpilles - n 11 - Residence du Mas de la Pierre Levee
+des Genévriers
+de la Chapelle
+de la Pible
+de la Gatine
+BD Du Grand Plantier
+Lautrette
+Saint Ausonne
+de Périgueux
+des colis
+des colis
+Nouvelle
+DE MONTBRON
+Duny
+9 place du plaineau
+de Limoges
+MAQUEVILLE
+Lehmann - Appt 1er étage
+de la Belle Allée St Cybard
+de la République
+Léonide Lacroix
+10bis r de la Gaîté
+Christophe Colomb
+43 Rue Marthe Vedrenne
+de la Marne
+MAQUEVILLE
+de l'Avenir
+de la Belle Allée St Cybard
+FONSTASTIER
+des Tilleuls
+Jean Jaurès
+des Tilleuls
+Les Jesuites lot n°55
+Chez Verguin
+Chemin de l'Etang
+Chemin de l'Etang
+des Colombes
+de l'Eglise
+Le Clos des Sablières
+1 rue de la Chagnée
+Le clos des Sablières  Lot 3
+du Puits
+des Marguerites
+Le Rang Clos
+du Lieutenant Bourdoiseau
+Emile Roux
+René Gillardie
+de Lavalette
+9 Rue Leonide Lacroix
+du terrier de la grand font
+du Capitaine Favre
+de la République
+rue du petit ménadeau
+Rampe de l'école
+de la Vallee
+Lousie Lériget
+Du Ponti
+de Paris
+Saint Martin
+de l'union
+de l'isle d'Espagnac
+Victor Hugo
+de Chevanon
+des Capucines
+Ronsard - Résidence Pléiades - Bât. Ronsard - Appt n°28
+Vert de Lait
+Lotissement Les Bosquets de Nerat
+Marie Curie
+de la Garenne
+172 RUE DE PARIS 2ème étage
+172 RUE DE PARIS 1er
+Les Greliers
+36 RUE DENIS PAPIN
+Les Jardins de la Palene
+Les Hauts de Puybertier
+de Limoges
+CHAMP DE MARS
+des Cressonnières
+des Meules à Grain
+Moc Panier
+de Basseau
+Moulin de la Combe de Loup
+de la Libération
+de Brébonzat
+Les Bosquets de la Vallade
+5 bis Chemin de la Grolette
+Rouget de l' Isle
+Le Clos des Groies
+des Alouettes
+Charcot
+des Trois Fours
+d'Iéna
+des Peupliers
+de Chicoutimi
+des Fayards
+26 Rue Jean Jaurès
+5 rue Pasteur
+3 rue de la Libération
+9 rue des cordonniers App N°8
+Les Girards
+Les Jardins de la Palene
+des écoles
+329, Route de Saint Jean d'Angély
+Liédot
+214 RUE DE LIMOGE
+de l Aubepine
+de la Loge
+De Paris
+de Perigueux
+Lotissement Le Clos de la Vallade - Lot 02
+des grandes Fenêtres
+2 RUE MOULIN DES 3 ROUES
+46 Rue Du Cdt Berger
+38 résidence de Badoris
+45 RUE PORT THUREAU
+146 ROUTE DE PARIS
+de la Grange
+de la Croix du Chat
+Alfred de Vigny
+Appt 3 ième étage, Porte droite 11, rue Ulysse Gayon
+10 ALLE DES JARDINS
+382 rue de Périgueux
+Lotissement les Jésuites
+de la Grauge
+Le Maine Gaubrun
+110 BD LIEDOT
+LOT 2 TERRES DU BOURG
+4 Impasse du vieux chaumontet
+DE SEGOU
+12, rue du Mas
+De Saint Jean D'Angély
+De Saint Jean D'Angély
+41 rue du 1er septembre 1944
+Moulin de la Combe de Loup
+21 rue des Farchauds
+Neuve
+77 ROUTE DE LAVERGNE
+des Saules
+21 AVENUE DES MARECHAUX
+Saint Auzonne
+Saint Auzonne
+du Président Wilson
+Le Rang Clos
+Rte de Claix - Les Guédons
+de la Cigogne
+de l'Armée - Appt 2ème Droite
+du Terrier de la Grand'Font
+HAMEAU DE FONTASTIER 6 PLACE DES SOURCES - APPT 13
+1 rue Molière
+38 Rue des 4 Sillons
+14 rue Leyssenot
+LA PLEIADE - RESIDENCE DUBLAY APPT N° 75
+BUSSAC 1 rue Joseph Vernet
+lot La Cagouille
+Les Cordes
+des Arceaux - Appt 1er étage
+des Arceaux - Appt 2ème étage
+des Arceaux - Appt 3ème étage
+Adolphe Chadouteau - Résidence La Croix St Cybard - Appt n°217
+de l'espérance
+de la Madeleine à l'Etang prolongé
+Lotissement le Petit Pont
+13 RUE DU DR FOURNIER
+9, rue du Puits
+1 LOTISSEMENT BACONNEAU
+2 rue Neuve
+4, rue de la Source
+Marcel Gaston Mercier
+Résidence Mario Roustand
+26 Rempart Desaix
+26 Rempart Desaix
+Lieu-dit Les Chaumes
+Lamartine
+D'Angouleme
+5 rue du moulin
+Madame Curie
+des Piverts
+N°1, Résidence Fontastier 202, rue des Mesniers
+Camille Pelletan
+Camille Pelletan
+de Montmoreau
+16 RUE DU LOGIS
+du Platin
+5 Impasse des Fourmis
+des Vignes Jaunes
+de la Madeleine à l'Etang
+20 RUE DES ROCS BERCHETS
+Léo Lagrange
+7 LOTISSEMENT CHEZ JOUANY
+du General Favre
+15 rue de l'union
+50 rue Léonard Jarraud
+La Mondone
+de la Grange
+34 Rue de Bellevue
+de la République
+46 Bis rue de Saint Jean D'Angely
+323 ROUTE DE ST JEAN D'ANGELY
+38 BIS RUE DU PERE DEVAL
+1 Rue de la Fontaine des Pots Grand Venat
+4 CHEMIN DU PUITS LE PUY DE NANTEUIL
+6 REMPART DE L'EST
+323 ROUTE DE ST JEAN D'ANGELY
+rue de la Cagouille
+234 rte des Seguins
+de Cognac
+15 Route de Mouthiers
+8 RUE LOUIS PUAUD
+Les Bertonnières 1 Allée des Platanes
+de Cognac
+Simard
+des Boissières
+des Boissières
+des Boissières
+des Boissières
+des Boissières
+Alfred de Vigny
+Neuve
+Roussel
+15 ROUTE DE LA GARENNE
+15, rue de la Caille
+de l'égalité
+Le Pessaud
+18 imp des Carrières
+1 chemin du breuil
+86 route de Saint Michel
+Victor Hugo
+7 rue Marc Sangnier
+Résidence Les Coquelicots Avenue Jean Mermoz
+CHARLES MORAUD
+Corderant
+des Trois-notre-dames - Appt n°2
+de Navarre - Résidence La Maréchalerie - Appt N°22
+Remberges aux Pierrières
+41 RUE LOUIS DESBRANDES
+des Fritillaires
+Henri Barret - Résidence Maine Brie 2 - Appt N°44
+DE LA VERGNE
+Paul Bert
+de Fontastier
+148 route de Paris
+de la République
+des Roses
+des Genins
+207-211 AVENUE DU GENERAL DE GAULLE APPT 1
+207-211 AVENUE DU GENERAL DE GAULLE APPT 2
+207-211 AVENUE DU GENERAL DE GAULLE APPT 5
+207-211 AVENUE DU GENERAL DE GAULLE APPT 4
+207-211 AVENUE DU GENERAL DE GAULLE APPT 8
+207-211 AVENUE DU GENERAL DE GAULLE APPT 7
+de la Chaussée
+65 Rue de la fontaine de Lirat
+RUE DE CLERAC A LA CROIX LALAUD
+RENE GILLARDIE
+de l'Egalité
+11 RUE GERARD DE NERVAL
+23 CLOS DE LA BLANCHE PIERRE
+1 ROUTE DE LA VALLEE
+du Petit Vouillac
+Résidence Le Mas de la Pierre Levée - Bât. Mes Baux - Appt 52
+4 ALLEE DES OMBRAGES
+41 Rue de l'épineuil
+16 résid du Verger
+des Maréchaux - Appt Rdc
+de la Liberation
+78 Bis route de Paris
+de Chantoiseau
+12 RUE FROIDE 1ER ETAGE
+des Rochereaux
+12 RUE FROIDE 2EME ETAGE
+12 RUE FROIDE 3EME ETAGE
+50 Rue des bézines
+Claude Debussy
+79 rue du Gingembre
+79 rue du Gingembre
+67 bis rue du Gond
+d'IENA
+de Québec
+Chez Foucaud
+Jules Ferry
+199 ROUTE DE VARS
+Rue Marcel Gaston Mercier
+38 rue du Soleil
+Logis de bois Renaud
+des écoles
+du Gond-Pontouvre
+6bis, Rue de Segou
+de Montbron
+Résidence Les Jardins du Festival Appt C14 1 Rue du Bois Renaud
+39 Rue Montauzier
+37 Rue Montauzier
+35, Rue Montauzier 2 bis rue Lucie Valore
+Jules Durandeau
+Résidence Les Jardins du Festival Appt C15 1 Rue du Bois Renaud
+1 RUE DU SOLEIL REZ DE CHAUSSEE DROIT
+Résidence Les Jardins du Festival Appt C24 1 Rue du Bois Renaud
+RESIDENCE MAINE BRIE 1 - APPT N°15 12 RUE HENRI BARRET
+19 rue de l'Union
+1 rue Jean de la Quintinie
+de la Garenne
+8 rue du logis Pombreton
+Le Haut des Chateliers lot n°5
+des Hameaux de Fontastier
+22 BD DE L'ARMEE
+Les Sablières
+du Gond Pontouvre
+Corderant
+Madame curie
+69 rue de l'égalité
+du petit Vouillac
+Jules Durandeau
+Allée de tilleuls
+Allée de tilleuls
+9, impasse du Canal
+34 RUE GOSCINY APPT N°1
+Jean Jaurès
+2 RUE MARGUERITE D'ANGOULEME APPT N°4
+341 RUE DU SAFRAN
+6, Résidence des Creusilles
+Besson Bey
+Cité du bois du Maine
+de la corderie
+de la corderie
+76, route de Bordeaux
+28 RUE DES GRANDS CHAMPS
+4 IMPASSE RENAULEAU
+172 RUE DE PARIS_RDC coté rue
+de la Couronne
+des Clos
+1 RUE DU SOLEIL REZ DE CHAUSSEE DROIT
+06 rue jean fougerat Appt T4
+2 BIS RUE DE LUNESSE
+1 RUE DU SOLEIL REZ DE CHAUSSEE DROIT
+121bis RUE FONTCHAUDIERE
+de Royan
+de Lamartine
+d'Alexandrie - Résidence Aegyptos - Bât. Louxor - Appt 10
+12 rue des Peupliers
+13 RUE FONTCHAUDIERE
+119 RUE FONTCHAUDIERE
+121 RUE FONTCHAUDIERE
+5 rue Jean de la Quintinie
+La croix manand
+Varenne de Vouillac
+4, Allée du Corail
+Place St Martial, Appt n°41
+119 rte de Paris - logt cour
+41 RUE JEAN JAURES
+cité du Petit Vouillac
+Rempart du midi
+ancienne de basseau
+Charles d'Aubigny
+BD WINSTON CHURCHILL Appt 19
+29 RUE MONTCALME
+28 ter av de Montbron
+de la chaume
+du Mas de la Pierre Levée
+Résidence du champ de Mars - rue Edouard Escalier
+des 4 Saisons Les Mesniers
+de Bel Air
+de Bel Air
+Chemin de l'Hirondelle
+Simard
+27 rue des Bézines
+du Gond Pontouvre
+10 Rue des argentiers
+37 rue Jean Marché
+195 rue Alfred de Vrigny
+5 Rue de l'Angoumois
+du Maréchal De Lattre de Tassigny - Résidence de la Gare - Appt 421
+Résidence des Argentiers - Rue des Argentiers
+48 rue de Bellegarde
+Puymerle
+Les Jardins de la palene
+Aristide Briand
+53 RUE JEAN JAURES
+Joliot Curie
+d'Artagnan
+209 route de Vars
+16, route de l'Isle d'Espagnac
+Joliot Curie
+Joliot Curie
+Joliot Curie
+Joliot Curie
+Appartement n°5 137, rue St Roch
+39 rue Godichaud
+5 CHEMIN DE LA CROIX ANTORNAC
+du Pont neuf
+de la Gatine - Résidence Clos de la Gatine - Appt n°30
+RESIDENCE BEAUSEJOUR - RDC 85 RUE DE BELLEGARDE
+1 rue des Résistants
+2 Impasse de la Garenne
+10 PLCE DU PALET APPARTEMENT N°3
+10 PLCE DU PALET APPARTEMENT N°4
+Lotissement Le Jonco 35 Rue du Petit Ménadeau
+de Chez Albert
+des rosiers
+8, rue de Beauregard
+Les Allées du Jonco 2
+Rue des Grands Champs
+RESIDENCE JARDIN VERT RUE LUCY VALORE BAT AUNIS - APPT N°69
+RESIDENCE JARDIN VERT RUE LUCY VALORE BAT AUNIS - APPT N°69
+RESIDENCE JARDIN VERT RUE LUCY VALORE BAT AUNIS - APPT N°69
+2 RUE DU PUITS
+23 RUE DES RECLOS
+de la garenne - Appt n°172
+108 rue des Mesniers - Les Mesniers
+6 RUE DES GRANGES
+6 RUE DES GRANGES
+de la Chapelle Saint Roch
+de la Chapelle Saint Roch
+de la Chapelle Saint Roch
+de la Chapelle Saint Roch
+de la Chapelle Saint Roch
+de la Chapelle Saint Roch
+de la Chapelle Saint Roch
+de la Chapelle Saint Roch
+11, rue Victor Hugo
+du 1er Septembre 1944
+8 RUE DU PAS DE LA VIGNE
+de Fontastier
+de la Chaume
+Froide
+de la Caille
+de la Claire Voie
+de l'Epargne
+Aristide Briand
+54 Rue Emile Legrand
+Coursac
+79 Bis chemin du Breuil
+3 Bd de l'Armée
+4 RUE DU SOLEIL
+DE LA SAVANE
+9 RUE CHATEAU BRUN
+13 CHEMIN DES GAUDINS
+de Basseau
+Rue de la Mairie
+Marcel Homon
+DE BASSEAU
+16 RUE DES CHIRONS
+de la Belle Allée
+13 rue Raymond Audour
+191, rue de la Tourgarnier Appt n°12, 2ième étage
+13 rue Raymond Audour
+13 rue Raymond Audour
+191, rue de la Tourgarnier Appt n°11, 2ième étage
+Anenue Gambetta
+de Montmoreau
+32 RUE PIERRE ET MARIE CURIE
+191, rue de la Tourgarnier 2ième étage, n°15
+191, rue de la Tourgarnier Appt n°11, 2ième étage
+des Remberges
+199 BIS RUE ST ROCH
+15 Rue De Lamartine
+Impasse Domaine de la Croix
+de Navarre - Résidence La Marechalerie - Appt n°24
+Chanzy Prolongé - Résidence de la Charmeraie - Bât. A - Appt N°23
+85 route de Royan
+de chateauneuf
+4 rue Victor Hugo 2eme étage
+Lieu dit La porte du bois
+Lotissement Domaine de la Boutillière
+Anatole France
+85 route de Royan
+85 route de Royan
+Roger Larmat
+18 rue Jules Michelet
+Résidence le Petit Pont Lot 6
+34 Bis Rue Jean Chabaneix
+Résidence du Jardin Vert - Bât. Angoumois - Appt N°17
+119 rue de la Loire
+115Ter, 119, 118Bis rue de la Loire
+REPRESENTEE PAR MR GILARD OLIVIER 10 RUE DE BORDEAUX
+de Basseau
+REPRESENTEE PAR MR GILARD OLIVIER 10 RUE DE BORDEAUX
+12-14-16 Avenue de Lattre de Tassigny
+Chausseloup
+Résidence les Jardins d'Abadie 145 Rue du Capitaine Favre
+PASTEUR
+63 TER RUE DU GOND
+5 RUE JEAN JAURES
+19 rue de l'Union
+51 Rue du Général LECLERC
+19 rue de l'Union
+14 rue de l'angoumois
+de la République
+198 BIS ROUTE DE PARIS RDC
+Du Bellay - Résidence Pléiade - Bât. Du Bellay - Appt n°66
+de Lattre de Tassigny
+114 ROUTE D'ANGOULEME LONGIESSE
+1 rue des grands champs App N°4
+16 Remparts de l'Est
+LOT 7 RESIDENCE LE GRAND BOIS
+de Tivoli
+de Fontgrave
+14 ALLEE DE LA CHATAIGNERAIE
+de Périgueux
+22 rue Cuvier
+Alfred Lurat
+Alfred Lurat
+Alfred Lurat
+Alfred Lurat
+Alfred Lurat
+Alfred Lurat
+40 Rue Léonce Guimberteau
+DU PONT VECHILLOT SILLAC
+13 ALLEE MAGELLAN
+NUNGESSER
+RESIDENCE LES TILLEULS - APPT N°15 ENTREE N°2 11 RUE PARMENTIER
+DU BOURG
+Puyrenaud Rue Armand Mesnard
+9 rue de l'abbaye
+18 BIS Allée des sports
+01 Rue Marcel Gaston Mercier
+27 Rue Marcel Gaston Mercier
+27 Rue Marcel Gaston Mercier
+21 Rue Marcel Gaston Mercier
+19 Rue Marcel Gaston Mercier
+15 Rue Marcel Gaston Mercier
+13 Rue Marcel Gaston Mercier
+de Belle Roche
+du Pétit Menadeau
+de la Vallée Noire  Les  Barbots
+de la Vallée Noire  Les  Barbots
+de Chicoutimi
+du Chais
+Lotissement Les Hauts de Neuillac
+155 RUE FONTCHAUDIERE
+du Perchet
+RESIDENCE LA MAS DE LA PIERRE LEVEE
+de la Mairie
+de la Lurate
+Logis de Foulpougne
+Logis de Foulpougne
+108 RUE DE LA CHARITE
+33 RUE DE QUEBEC
+10 r du 14 Juillet
+01 Rue Marcel Gaston Mercier
+01 Rue Marcel Gaston Mercier
+20 Rue Marcel Gaston Mercier
+16 Rue Marcel Gaston Mercier
+14 Rue Marcel Gaston Mercier
+12 Rue Marcel Gaston Mercier
+10 Rue Marcel Gaston Mercier
+11 Rue Marcel Gaston Mercier
+16 r de l'Union
+Les Agriers
+22 rue Cuvier
+26 rue de l'Epineuil
+44, route des Chaumes
+Jules Ferry
+09 Rue Marcel Gaston Mercier
+09 Rue Marcel Gaston Mercier
+07 Rue Marcel Gaston Mercier
+268 ROUTE DE ROYAN
+05 Rue Marcel Gaston Mercier
+25 Rue Marcel Gaston Mercier
+Square du Pigeonnier
+de la pommeraie
+RESIDENCE DARAS APPT 163 AVENUE DE LATTRE DE TASSIGNY
+Wilson
+de la pommeraie
+des poignards au courret
+851 ROUTE DE CHAPELLE
+7 RUE GENERAL LECLERC
+5 RUE DES TROIS FOURS 3 EME ETAGE
+Jules Durandeau
+5 ROUTE DE BARBARY
+17 RUE RENE GOSCINNY 2EME ETAGE DROIT
+17 RUE RENE GOSCINNY 2EME ETAGE GAUCHE
+11 IMPASSE JEAN JAURES
+d' Angoulême
+des Mesniers
+des Mesniers
+des Mesniers
+12 rue Croixgarnier
+99 bis rue Tourgarnier
+des Mesniers
+des Mesniers
+des Mesniers
+des Févriers
+DU DOCTEUR FOURNIER
+319, rue des Seguins
+Les Hauts du Bourg
+DE LA SOMME
+Clos du Maine-Brie
+5 RUE DU DR GILSON
+de la Vergnade
+16 rue des platins
+16 rue des platins
+de Nersac
+de Clérac à Sillac
+de Claix
+de la Gare
+184 r de Basseau
+86 RUE DE LA GRAND FONT
+Athos
+14 RUE DE PINDRAY
+Le Treuil
+11 IMPASSE JEAN JAURES
+13 r de l'Epineuil
+6, sentier de Quintinie
+Saint Martin
+Jean Jaurés
+Les Jésuites
+350 RUE DE ROYAN
+119 AVENUE DE LA REPUBLIQUE MAISON 2
+LES DOUHAUDS
+115 RUE MONLOGIS
+287 rue de Basseau
+20 RESIDENCE LES PROVENCALES
+70 RUE MONLOGIS 1ER ETAGE
+de Chantoiseau
+31, route des sipieres
+112 RUE DE PERIGUEUX
+Abbé Rousselot
+83 rue Monlogis
+de Lunesse
+Corlieu
+Des Tulipes
+La Touche
+de Vars
+Le Gillat
+Résidence la Bohême
+10 RUE DE L'EPARGNE
+112 RUE DE PERIGUEUX
+46 rue du Petit Menadeau
+112 RUE DE PERIGUEUX
+Parmentier
+de la pommeraie
+de la République
+31 Route de Mouthiers
+34 A rue des Trois Rois
+d'Austerlitz
+de St Michel
+60 ALLEE PAUL CEZANNE
+12 ALLEE DES CEDRES
+Saint Roch
+47 Rue du Canal
+39 AVENUE DU PETUREAU
+105, ter rue de Basseau
+23, rue Mirabeau
+20 CHEMIND ES VIGNES
+Représenté par Mr FAURE Guy - 3 Impasse d'Austerlitz
+Louis Laurent
+de la Charité
+Lotissement Les Jardins de la Paleine
+8 résidence de la Boëme
+8, rue Henri Dunant
+Lotissement Les Jésuites
+47 Rue du Canal
+34 A rue des Trois Rois
+106 rue du 1er septembre 1944 Résidence des Feuillantines
+10 RUE DU DR GILSON
+8 RUE DU DR GILSON
+6 RUE DU DR GILSON
+du Gond Pontouvre
+de la Grouge
+LES MAINES
+1 Rue Verrazano
+ARISTIDE BRIAND
+Les Loges
+de la Combe de Vouillac
+20 RUE DES FONTENELLES
+de Bellefond
+70 RUE MONLOGIS 2EME ETAGE
+10 BIS RUE LEONARD JARRAUD
+10 RUE LEONARD JARRAUD
+Rue Jean Jaurès
+341 rue de Basseau
+15 rue de Chacot
+90 RUE DE MONTMOREAU APPARTEMENT SITUE AU 2EME ETAGE
+69 AVENUE JULES FERRY
+des Charmilles, La Prévoterie
+de Royan
+Appt n°6, 1 er étage 85, rue Bellegarde
+Appt n°3, 29 rue de la Libération
+15 BOULEVARD DU BURY
+15 BOULEVARD DU BURY
+34/36 rue du Pont Vinson
+DES BARDONNELLES
+8 ALLEE VASCO DE GAMMA
+130 rue Jules Durandeau Saint Cybard
+36 Chemin de la mothe
+20 RUE MAURICE UTRILLO
+20 boulevard de Bretagne
+du Moulin
+les terrasse d 'egyptos 3 rue Alexandrie App 61 2 eme étage
+1 PLACE DES BOULEAUX
+10 Bis rue Corlieu
+31 Résidence les Creusilles
+560, rue des Cerisiers
+des Echaliers
+12 RUE DU DR GILSON
+23, route des Barbots
+18 rue du Petit Vouillac
+Leonide Lacroix
+de Bel air à la Grand Font
+de Limoges - Résidence Madeleine - Appt n°14
+des Fontenelles
+Edouard Escalier - Résidence du Champ de Mars - Appt n°39
+du Peu
+de Basseau
+des hayes
+13, rue du clocher
+Résidence des gibauds - Rue du Pont Véchillot
+21 rue Pierre et Marie Curie
+des bois foucaud
+des Chaumes rondes
+du Capitaine Favre
+de Périgueux
+1 Chemin de la Bergère aux hameaux
+du Bourg
+10 PLCE DU PALET APPARTEMENT N°4
+10 PLCE DU PALET APPARTEMENT N°3
+19 ROUTE DE LA VALLEE
+Les Granges
+Route de Marthon
+René Coty
+de Paris - Résidence Le Moulin de Vimière - Bât. B - Appt n°59
+26, résidence de Badoris
+des Buis
+Monlogis
+68, route de Royan Les Planes
+4, rue Meulière
+88, rue du Souvenir des Fusillés de la Braconne Les Frauds
+Riffauds
+Wilson
+9, impasse de la prairie
+des Mimosas
+de Montbron
+66 Avenue Jean Jaurès
+des Postes - Appt 3ème Face
+Jean Petit
+6 rue du Pontouvre
+de Paris
+de Paris
+de Paris
+de Paris
+de Paris
+de Paris
+de Paris
+de Paris
+6 Bis Impasse du bon Saint Roch-Gauche
+63 Rue de Montmoreau
+Rue de l'Ile Verte
+16 Impasse de la Rivière
+des Baudins
+19 bis, rue Saint Ausonne
+364, avenue de Navarre
+32 Avenue de la gare
+du Port
+Le Bouchaud
+70 RUE MONLOGIS
+93 r de Paris Rés. Le Moulin de la Vimière - Appt 60
+84 Bd René Chabasse
+84 Bd René Chabasse
+84 Bd René Chabasse
+84 Bd René Chabasse
+84 Bd René Chabasse
+84 Bd René Chabasse
+4 Rue Francis Carco
+4 Rue Francis Carco
+de Rouillac
+de la Bouchaudière
+12 RUE DES REMBERGES
+Jean Jaures
+de la République
+17 rue François 1er
+1 Bis Bd Berthelot - Etage 3- Appt 43
+de la Boeme
+Lieu dit Varenne de Vouillac
+20, les allées de la mondonne
+rue Chevrillon
+94 RUE LAUTRETTE
+13 RUE DU MOULIN DES DAMES
+13 rue du chateau de la cote
+69 RUE DE LIMOGES
+2 Rue des Renardières
+2-4 rue des Renardières
+37 BD DU COLONEL CAMPAGNE BAT A
+7 RUE LOUIS INDEAU
+12 RUE CHEVRILLON
+14 RUE DE LA GENDARMERIE
+DES ARTISANTS
+de bretagne
+1 rue d'Alexandrie Aegyptos Bât 1 Appt 15
+Chez Maurin
+30 RUE DE PARIS
+68 RUE JEAN JAURES
+118 ROUTE DE VARS
+16 impasse de la Combe
+La Bussiere
+6 rue du Pontouvre
+r de Chez Vasly
+5 CHEMIN DE LA BARATTE
+des Charmilles - Les Favrauds
+Montalembert
+5 RUE DE LA FONTAINE
+82 RUE DE LA GRAND FONT
+des Brandes
+12 imp des Capucines
+de Paris
+5 allée du Gazomètre
+26, Bd Pierre Camus
+63 BIS RUE DU GOND LOGEMENT DU GOND
+2, rue Jean Jacques Rousseau
+16 RUE DE L'AUBEPINE
+178 RUE DE MONTMOREAU
+de l'Avenir
+1202 route des Riffauds
+20 rue Boisnard
+Aulard
+67 Rue Abbé Rousselot
+20, rue des Badoris
+SAUVAGET
+Le Maine Gaubrun
+Joliot Curie
+du Rosier l'Ouche
+252 RUE EMILE ROUX
+144 RUE DE LA CHARITE
+des Montbrunes
+des sablières
+rue Monlogis
+26 bis, rue de Bellevue
+31 Route de Champniers
+3 BIS RUE DE QUIERS
+Victor Hugo
+de Clérac à Sillac
+10 RUE VAUBAN
+281 RUE DE BASSEAU
+137 RUE ST ROCH APPT N°10
+3 AVENUE JULES FERRY 1ER ETAGE
+3 AVENUE JULES FERRY 2EME ETAGE
+19 r de la Fuie
+42, rue Victor Hugo
+DES GRILLONS
+d'Entreroche
+2 route de Bellevue
+du Pont de Vinson
+10 PLCE DU PALET APPARTEMENT N°4
+158 RUE EMILE ROUX
+ROUTE DE ROPRIE
+4 Impasse des Violettes
+128, rue des Mesniers
+Rue de la Plaine
+de l'union
+de la Fontaine Les Riffauds
+10 PLCE DU PALET APPARTEMENT N°3
+10 PLCE DU PALET APPARTEMENT N°4
+Lucien Deschamps   Les Limbaudières
+1 ALLEE DE VERDUN
+2, impasse des Ouches Brenat
+de Paris - Appt 2ème étage
+Lotissement Résidence Les Cardinaux -
+Lotissement Résidence Des Cardinaux
+Route du Chatelard Les Ribondaines
+22 rue Boisnard
+156, rue de la Loire
+L'AGE
+de l Abbe Rousselot
+23, rue de la Trésorière
+Les Jardins de St Michel
+57 rue de la Cible
+62, avenue de la République
+4 Rue Jean Lajudie
+64, avenue de la République
+de la Grand Font
+70 RUE DU CAPITAINE FAVRE
+9016 ALLEE DE LA BELLE AUDE LE PETUREAU
+85 RUE ST ROCH
+176 Boulevard de la république
+176 Boulevard de la république
+Jean Jaures
+36, rond point du bois
+Chemin de Puymerle
+route de la Vallée Noire  Les Barbots
+du Pont Vinson
+4 IMPASSE DU ROC
+12 RUE PIERRE SEMARD
+1 PLACE ST GELAIS
+79 ROUTE DE PONTDEVILLE
+10 r du Minage
+du champ de paty
+5 Chemin de la Pallue
+4 RUE DES 5 JOUNAUX
+16 ALLEE LES COMBES
+8 RUE PAUL BERT
+des lilas
+de St Marc
+12 imp des Capucines
+alfred de vigny
+Parmentier
+PARMENTIER
+3 RUE DU DR LAMAZE
+PARMENTIER
+95 Rue de Bellegarde
+64, avenue de la République APPT 1er étage
+des Ecoles
+155 Rue de Montmoreau
+26 Impasse des Vignes de Badoris
+7 rue du 14 Juillet
+de Nersac
+7 Route de Roullet
+97-99 BD BESSON BEY
+15 RUE DU CHATEAU D'EAU
+753 LA FONTAINE DES RIFFAUDS
+MONTAUZIER
+Jean Moulin
+26, rue Vigier de la Pile
+45 rue du Minage
+6 rue Belle Aude
+30 Bis Rue d'Arcole - 2ème Etage
+de la Republique
+Appt 36 - Etage 1 - 93 rue de Paris
+171, route de Bordeaux
+171, route de Bordeaux
+Fonchaudiere
+69 RUE DE LIMOGES
+5, rue des 3 Notre Dame
+10 Rue du Pont Neuf
+Place Chantoiseau
+ter Rue  Jean Jaurés
+152 Rue de Clérac à Sillac
+Lieu dit Chez Piveteau
+57, rue René Gosciny
+2, Route des Bretons
+37 RUE PUYBRANDET
+Le Grand Bois lot n°1
+Aristide Briand
+158 rue Descartes
+134 rue Descartes
+48 rue de la Chaussée
+17, rue Maurice Bastié
+Souchet
+de Montignac
+10 RUE JEAN DE LA FONTAINE
+12 RUE JEAN DE LA FONTAINE
+des Rois
+7 rue du Port Vison
+7 rue du Port Vison
+7 rue du Port Vison
+Résidence Les hauts de Puybertier
+Lotissement Les Jardins de la Palène
+Lieu dit Chez Thibeau
+Lotissement Les Allées de la Mondonne
+6 rue des Prés
+des Pins
+Jean Jaures
+17 RUE RENE GOSCINNY 2EME ETAGE GAUCHE
+17 RUE RENE GOSCINNY 2EME ETAGE GAUCHE
+CHEMIN DE FONTBELLE
+26 RUE MONTCALM
+181 RUE DE ST JEAN D'ANGELY
+102 Bis rue de Saintes
+102 Bis rue de Saintes
+4 Impasse Pierre Loti
+10, Rue des Coccinelles
+Jean Marot
+Jean Marot
+Les Hauts des Chateliers lot n°8
+8 RUE PEUSEC
+137 RUE LAVOISIER
+71 RUE MONLOGIS
+11 Place du Docteur Barret
+146 route de la Boissière
+146 route de la Boissière
+Jules Verne
+des bois foucaud
+21 Les Hauts de Cigogne
+de Montmoreau
+Le Petit Fresquet
+Lamartine
+cité de l'Entrant
+Jules Ferry
+5 RUE MAURICE MICHAUD LIEU DIT LE PETIT VENAT
+24, rue Sinard
+du Vieux Puit
+2 ROUTE DEGUISSALLE
+48, Rue Vaucouleurs
+52 Résidence de Badoris
+Les Groies lot C
+du Petit Vouillac
+8 RUE PEUSEC
+97 rue Aristide Briand
+des Plantiers
+des Versennnes
+25, route de Mouthiers
+de Basseau
+de Paris - Résidence Le Casting - Appt n°51A
+de Pondeville
+15 25 RUE DES SITELLES
+24 Rue de la Croix Brandet
+de La Courrieres
+10 chemin des coteaux Antornac
+25, rue Alfred de Vigny
+82 RUE DU GOND REZ DE CHAUSSEE COTE RUE
+82 RUE DU GOND 1ER ETAGE COTE JARDIN
+18 RUE DE LA TRANCHADE
+27 Rue de la Combe JAILLOU
+Liedot
+des Mimosas
+des Etangs
+Le logis de la Tourette N°8
+135-137 rue de la Grand Font
+des Laurieres
+2 rue de Chez Lambert
+de Saintes
+83, avenue de Lattre de Tassigny
+38 BIS AVENUE DU GENERAL DE GAULLE
+17 RUE BASSE LAVALETTE
+98 ROUTE D'ANGOULEME
+14, impasse des Peupliers
+de la Montee de la Gare
+4 Allée de la Grappe
+12 Avenue de la République
+9 rue Pierre et Marie curie
+du Génaral de Gaulle
+du Temple
+de la Paix
+Emile Ajar
+1228 RUE CLAUDE BONNIER
+148 ROUTE DE BUNZAC
+de la Cigogne
+Anatole France
+37 RUE DENIS PAPIN
+4, Chemin de la Martre
+18, rue de la Belle Allée
+38 rue Emile Legrand
+d' Austerlitz
+de Vaucouleur
+LE GRAND BOIS LOT N°6
+10 RUE VICTOR HUGO
+4 RUE DU SOLEIL 2EME ETAGE GAUCHE
+31 rue des Cheminées
+28 rue Beauregard
+94 rue du Tridou
+11 boulevard Jean Jaures
+Tous Vents 18 Impasse de la Biche
+Les Gélinards
+7 rue de Belfond
+de la Sariette
+68 RUE JEAN JAURES
+de la Tourgarnier
+haute des Bourdageaux
+5 rue des tulipes
+Les Terrasses d'Aegyptos 3 rue Alexandrie
+214, route de Bunzac
+du Peux de St Amant
+La Moussonnerie
+35 rue de Victor Hugo
+16 bis et 18 Rempart du Midi
+16 bis et 18 Rempart du Midi
+16 bis et 18 Rempart du Midi
+16 bis et 18 Rempart du Midi
+16 bis et 18 Rempart du Midi
+16 bis et 18 Rempart du Midi
+16 bis et 18 Rempart du Midi
+16 bis et 18 Rempart du Midi
+PARMENTIER
+des Mesanges
+18, rue Gontran Labrégère
+du Champ de Paty
+3 RUE DU 14 JUILLET
+La Moussonnerie
+Jean Guerrin
+20 RUE DU VERGER
+3 RUE DES ECOLES
+des Pierrailles
+375 Rue de Basseau
+1 RUE DE LA FONTAINE ANTORNAC
+de la Chapelle
+10 RUE VAUBAN
+22 RUE DE LA GRAND FONT
+22 RUE DE LA GRAND FONT
+4 IMPASSE DU GRAND MAINE
+de l Eglise
+250 rue Fontchaudière Résidence du Petit Saint Cybard
+Aristide Briand
+74 Rue Alfred de Vigny
+196 RUE DES ALOUETTES
+20 RUE DU POINT DU JOUR APPARTEMENT N°1
+8 rue Marguerite de Navarre
+Moulède - 11 impasse du Plantier
+99 rue Aristide Briand
+des Loriots
+des Noyers
+3, rue des Chaumes rondes
+39, rue de la Prairie
+10 r de l'Aubier
+6, rue de la Rochandry
+8 Rue Leclerc Chauveau
+10 Rue Leclerc Chauveau
+10 Rue Leclerc Chauveau
+15 route de chez Papin
+8 Rue Leclerc Chauveau
+10 Rue Leclerc Chauveau
+10 Rue Leclerc Chauveau
+10 Rue Leclerc Chauveau
+70, chemin des Groies
+du Cormier
+216 ROUTE DU LOGIS
+Emile Roux
+lotissement tivoli
+Les Allées de La Mondonne, lot 14
+60 rue d'Angoulême
+de Pindray
+de la Forêt
+Les Vignes
+2 square du Pigeonnier
+Avenue John Kennedy
+2 BIS RUE LAMARTINE
+de la Loire
+Denfert Rochereau
+28, rue Mirabeau
+Lotissement Le Clos de la Vallade - Lot 4
+de l'Egalité
+de Limoges - Appt 2ème Gauche
+Lieu dit Le Painaud Lot 3
+Paul Bert
+Boissières
+Chadouteau - Résidence La Croix - Appt n°206
+terre neuve
+du Puits de Denin
+16 ALLEE DU BOIS DU MAINE
+2 rue de Lombrette
+Jean-baptiste COROT - Appt A Rdc
+Jean-baptiste COROT - Appt B 1er étage
+des Charmilles
+Robert Doisneau
+Aristide Briand
+Chalonne
+12 rue de l'Eperon
+du Bourg
+Lotissement ''Les Jardins de la Paleine'' Lot 12
+109  IMPASSE DES ARBOUSIERS
+132 ROUTE DE VARS
+Noel Noel
+d'Entreroches
+595 rue Toulouse Lautrec
+68 RUE DES LILAS
+6 RUE DE L'ETANG
+86 RUE DE LAVALETTE
+Résidence Aegyptos 1 Rue d'Alexandrie
+de l'Epineuil
+Camille Pelletan
+Camille Pelletan
+Jean Jaures
+de BEAULENCOURT
+de Bordeaux
+de Périgueux
+146 RUE DE LIMOGES
+460 ROUTE DES SABLONS
+du gond
+du gond
+du gond
+de Paris
+117 Bis ru Saint Martin
+Chez Foucaud
+du Terrier de Bourguignol
+Henri IV
+Jean Jaures
+de Chez Souchet - La Chapelle
+des Merles - Le temple
+de la loire
+des Gots
+Léonce Guimberteau
+de la Caille
+39, rue de la Belle Allée
+des Sablons
+132 ROUTE DE VARS
+du Bon Saint Roc - Résidence du Square - Appt n°17
+du Quai Militaire
+des Vignes de Badories
+5 LOTISSEMENT LES HAUTS DE FONTENELLE
+2524 ROUTE DU PONTOUVRE
+11 rue de Puybertier
+Maurice Utrillo
+des Arnauds
+10 Bis Impasse Marc Doucet
+14 RUE DES GRANDES TERRES
+58 RUE MONTAUZIER
+17 Route de Bussac
+22A ROUTE DE LA COTE A BOURNET
+50 r de l'Epargne
+53 Rue General Leclerc
+de l Escalier
+de la Chaume
+140 Rue Jules Ferry
+67 bis rue Hergé
+CHEMIN DE LA FONTAINE DU CERISIER
+9 rue des Boisdons
+de Saintes
+184 r des Mesniers
+11 RUE DU PORT THUREAU
+5 BOIS DE ROCHEFORT
+des Fours à Chaux
+11 RUE DE LA PIERRE LEVEE
+471 RUE DES BOUVREUILS
+Vallade
+23 RUE ARAGO
+43 rte des Groies de Fustifort
+Rue du Tilleul
+de Dignac- Le parc Bas
+22A ROUTE DE LA COTE A BOURNET
+André Dagnas
+Paradis Les Gailledrats
+Cuvier
+31 r du Petit Rouillac
+Calmette
+des 4 Sillons
+Cité des Agriers
+164-170 route de Périgueux
+164 Route de Périgueux - 1er Etage T1
+des rosiers
+164 Route de Périgueux - 1er Etage T2
+3 IMPASSE PARMENTIER
+du grand Maine
+9 RUE DU BOSQUET
+414 RUE DE LA VERGNADE
+10 rue de la Combe
+234 rue de Basseau
+Lotissement ''Le Haut des Chateliers'' Lot 4
+des Sablons - Le Marais
+Résidence le Panorama - 39 rue de Basseau
+LES CHIRONS
+23 rue de la Couronne
+Appartement 5 - RDC, 98 route de Saint Jean d'Angely
+de Périgueux
+Rampe d'Aguesseau
+Lotissement Résidence des Cardinaux
+170, Rue de Périgueux
+Henri Barret
+Lotissement Les jardins de la palène lot 3
+2 RUE DE L'ETANG
+Le Petit Pont
+3 Place de l'Eglise
+Route de Villars
+des Roses
+du Paty
+des Bouleaux
+des Tourterelles
+Lucie Valore
+7 BIS RUE DE LA LURATE
+de Champniers
+Alfred de Vigny
+de la Chaume
+5 rue du Puits de Denin
+du Bourg
+9 DOMAINE DE PUYREDON RUE DE MONTBRON
+36 route de Cognac
+2 Impasse des Sautereaux
+32 rue de l'Egalité
+11 rue du Parc APPT 16 3eme étage
+10 Rue Pierre Sémard
+1 ALLEE DE LA SABLIERE
+6 IMPASSE DU PRE BIRAUD ROULIS
+RESIDENCE DU PARC 11 RUE DU PARC - APPT N°19
+Impasses des Pommiers
+6 IMPASSE DU PRE BIRAUD ROULIS
+1 RESIDENCE DE L'AUBEPINE
+6 RUE DES BOURGUETS
+Mirabeau
+45, rue de l'Epineuil
+106 RUE DE LIMOGE APPARTEMENT N°8
+Rue des Tulipiers du Haut Logis
+6 rue de Bellevue
+de la Chataigneraie - Appt n°74
+39 RUE MARYSE BASTIER
+28 RUE PHILIPPE DE VOLVIRE
+Résidence Square Elisabeth - 3 Rue Jean Mingat Appartement No. 17
+288 rue de Montmoreau
+du Maréchal Leclerc
+7 Allée Vasco de Gama
+Victor Hugo
+90 RUE DE LA TOURGARNIER
+82 RUE DU GOND APPT N°4
+82 RUE DU GOND APPT N°3
+Rue du Général Leclerc
+132 ALLEE DE LA CROIX DES VOISINS
+de la Grand Font
+Saint-Roch
+du Souvenir
+Lotissement Le Jesuites lot 66
+Lot 3 Résidence du Logis Bois Menu 2
+de Lunesse
+de Lunesse
+533, route de vars
+de la Cibarde
+10 rue de l'Hirondelle
+10 rue de l'Hirondelle
+de la Chevalliere
+des Ouches
+23 RUE EMILE LEGRAND
+6 RUE ST GELAIS
+11 RUE DES ROSIERS
+du Clair de Lune
+6 rue de la libération
+Castaigne
+Maurice Utrillo
+Castaigne
+de Royan
+DU CHAPEAU ROUGE
+de la Rivière
+DU CHAPEAU ROUGE
+DU CHAPEAU ROUGE
+lot 19 Résidence La Bohéme
+Résidence du Treillac lot n°27
+Résidence des Cardinaux - Lot n°21
+DU CHAPEAU ROUGE
+30 rue des Vignaux
+DU CHAPEAU ROUGE
+DU CHAPEAU ROUGE
+de Chez Papin
+Route de l'Hermitage
+20 résid bois Boutin
+Henri Barret - Résidence Maine Brie 2 - Appt n°35
+de Saintes
+de l Epineuil
+du Bourg
+263 RUE EMILE ROUX
+des Carrières
+40 route de Breuty
+Résidence Les Estudines 98 Rue St Jean d'Angély
+539 (anciennement 23) Rue de la Vergnade
+RESIDENCE LES ESSARTS - APPT 128 ESCALIER 10 5 BIS CHEMIN DE GRELET
+89, avenue de la gare
+38 ROUTE DES BARBOTS
+de Chez Chagneau
+Le Grand Bois - Lot n°2
+10B  Impasse Paul Bert
+des Lignes
+DU CHAPEAU ROUGE
+10D rue Paul Bert
+27 rue de Bellevue
+Jean Moulin
+10A rue Paul Bert
+10C  rue Paul Bert
+de l'oeil de Boeuf
+des Sports
+Résidence d'Epernon
+du Gond
+126 route de Saint Michel
+de l'Eglise
+22, Avenue de la Nouère
+3 Hameau de la Grange
+9 rue du Docteur Gilson
+2 Passage des Grillauds
+20 rue du Minage
+de la Pierre
+7 résidence des Vignes
+des Ombrages
+8 résidence des Vignes
+De la Tourgarnier
+380 rue de Périgueux
+107 BIS RUE DU CAPITAINE FAVRE
+59, Rue Waldeck Rousseau
+Route du Portal
+des écoles
+Lotist L'Allée Des Pins - N°28
+RESIDENCE RUE DE PARIS - APPT A13 44-46 RUE DE PARIS
+174 RUE DE LIMOGES
+15 rue Anatole France
+15 rue Anatole France
+Résidence Le Mas de la Pierre Levée - Bât. Durance - Appt n°135
+des Mesanges
+La motte
+Lotissement ''Champ de la Croix''
+de saint jean d'Angely
+du Bois Personnier
+3 RUE DES 4 EVIERS
+6 rue Bedzino
+Roger Salengro
+5, Impasse Paul Mousset
+106 rue Saint Roch
+106 rue Saint Roch
+98, rue Raspail
+98, rue Raspail
+98, rue Raspail
+1, rue des combes
+Rue de la Boême
+Rue des Mesniers
+18 r de la Prairie
+des Sports
+de Basseau
+867 RUE DU PARADIS
+du Chateau
+10 rue des Geards
+Montalembert
+Résidence Treillac
+DE MONTMOREAU
+Lotissement ''résidence de la Boëme'' - lot 33
+72 IMPASSE DES AGRIERS
+78 Impasse de la Ponche
+des Plantiers
+du Pontouvre
+de Paris
+Rue des Mesniers - La Croix Manand lot n°14
+281 bis avenue de Navarre
+281 bis avenue de Navarre
+Jean La Judie
+Fontaine des Avenauds
+3 Impasse Baïsa
+de la Porte
+32 rue Mirabeau
+de la Liberation
+Rue de Vaugeline
+15 r de Chevanon
+de la Liberation
+10 RUE DES PRES DE LA FONTAINE
+10 RUE PIERRE LOTI
+2 PLACE SAINT PIERRE APPARTEMENT AU 1ER ETAGE
+2 PLACE ST PIERRE APPARTEMENT EN DUPLE
+des Groies
+du Rodin
+9 RUE DE BORDEAUX_lognt
+Rue des Gots N°6 Les Allées de Salomé
+des Sources
+Le Champs des Vignes
+22, impasse du Vélodrome
+Logis de Foulpougne
+7 route de chez Chagnaud
+10 RUE DU MIDI
+22 RUE CORLIEU
+16 BIS RUE DE LA MUTUALITE
+du Bourg
+Charles Petit
+20 rue de Québec
+7 allée Castaignes
+de BEAUMONT
+67, bd Aristide Briand - Studio N° 1 RDC
+257 AVENUE JEAN ANTOINE
+de la Republique
+67, bd Aristide Briand
+67, bd Aristide Briand - 2ème étage Studio n° 3
+67, bd Aristide Briand - 3ème étage Studio n° 4
+Lieu dit Bellevue Rue Jean Jaurès
+des Myosotis
+15 rue Flemming
+485 route de la Prévoterie
+22 RUE MONTREAL
+Nanteuillet
+du Cdt Berger
+Lot n°20 Bosquet de La Vallade
+de la Chaume
+de l'Eglise
+46 rue Jean Jaurès
+de la Gare
+Jean Jaurés
+18 Place de l'Hotel de Ville
+18 Place de l'Hotel de Ville
+Gambetta
+559 RUE HENRY MATTISSE
+de Montbron
+de Montbron
+de Montbron
+de Montbron
+des Trois Chênes
+135-137 RUE DE LA GRAND FONT APPT 13
+Louis Barthou
+du Maine   BRENAT
+RUE DES GROIES
+du Lion
+La Ponche
+de Bellevue
+29 BIS RUE DES ECOLES
+43 COTE DE BOURNET
+233 av de la République
+48 rue Louise Leriget
+15 r du Clos du Maine de Brie Appt n°20
+ancienne de Montmoreau
+137 BIS RUE DE LA LOIRE
+du Grand Poirier
+1 Place de la Liberté
+Résidence du treillac - Lot n°9
+d Iena
+31-33 RUE DE L'EPINEUIL MAISON CENTRE
+de la Gare
+Denis Papin
+Résidence Les Cardinaux Charente
+51 rue Parmentier
+17 Rue Tison d'Argence
+17 Rue Tison d'Argence
+87 BIS RUE DU CAPITAINE FAVRE
+5 AVENUE DE LA NOUERE
+Victor Hugo
+23 AVENUE DE LA REPUBLIQUE
+de Périgueux
+Emile Roux
+19 rue Jules Ferry
+17 Rue Tison d'Argence
+17 Rue Tison d'Argence
+Avenue Jean Jaurès
+40 Rue Madeleine à l'Etang
+37 rue Madeleine à l'Etang
+Lieu dit Les Ouches
+des Genins
+Rue des Violettes
+2 Chemin du Parc
+de la Chaume
+Emile Roux
+de Vars
+Lotist Les Jésuites - N°74
+de Clérac à Sillac
+26 Rue Roger Bonnet
+57 RUE DE PARIS
+249 AVENUE DE NAVARRE
+7 IMPASSE DE LA PUDILLE
+René Sardin
+17 Rue des Bosquets
+10 rue des 4 Eviers
+Les Andreaux - Les jardins de la Palene lot n°13
+du Général de Gaulle
+Résidence Le Grand Bois Lot n°12
+de Midi
+de Clérac à Sillac
+de Clérac à Sillac
+Laferriére
+25 rue Saint Ausone
+Appartement 1 - RDC - 29 rue Ulysse GAYON
+Appartement 2 - ETG.2 - 29 rue Ulysse GAYON
+Appartement 3 - ETG.3 - 29 rue Ulysse GAYON
+Appartement 4 - ETG.3 - 29 rue Ulysse GAYON
+Appartement 5 - Duplex - 29 rue Ulysse GAYON
+de Clérac à Sillac
+de Clérac à Sillac
+de Clérac à Sillac
+12 RUE ANDRE DAGNAS
+57 ROUTE DE COURSAC
+12-14, Place de l'Hotel de Ville
+Rue des Sports
+12-14, Place de l'Hotel de Ville
+163 avenue Gambetta
+Lotissement ''Le clos de la vallade''
+27 RUE DE L'EPINEUIL
+9 RUE D'IENA 3EME DROITE
+9 RUE D'IENA 3EME GAUCHE
+Route du Got
+42 allée des sports
+Lotissement ''L'allée des grapillets''
+de la Garenne
+16, rue Charles Gounod
+des Prairies
+Bellegarde
+Lotissement ''Les Jardins de la Palène''
+Rue de chez Joumier
+des Tulipes
+86 rue de la Loire APPT RDC
+86 rue de la Loire APPT 2ème étage
+du docteur Schweitzer
+48 rue de Montbron
+343 rue de Basseau
+16 rue du Tranchard
+des Marronniers
+Rue du Pré des Chambauds
+71, route de la Pierre
+15 rue Flemming
+15 rue Flemming
+15 rue Flemming
+Lotissement ''Grapillets''
+Saint Cybard
+88 RUE DE PARIS 2 EME ETAGE DROIT
+19 RUE DE LA CLOCHE VERTE RDC DROIT
+42, rue du Canada
+58, rue du Canada
+Appt. n°6 - 169 rue de Clérac à Sillac
+1051, Rue du Porche
+39 rue Saint Martin
+2 Impasse des Jardins
+Le Petit Poinard
+195 RUE DE MONTMOREAU
+1 rue de la Clairière
+5 RUE DES CORDONNIERS 2EME GAUCHE
+RESIDENCE EMERAUDES 37 RUE DES GOTS
+123 Avenue Gambetta
+Appt n°4, Résidence Loire 2 132, rue de la Loire
+d'Auvergne
+123 Avenue Gambetta
+des Acacias
+28 rue Jean Baptiste Corot
+16 Rempart de l'Est
+12 rue Georges Clémenceau
+LES PLEIADES BAT RONSARD - APPT 35
+LES PLEIADES BAT RONSARD - APPT 35
+Jean Jaurés
+de Paris
+de Périgueux
+des Fontenelles
+32 Rue Victor Hugo
+de Beaulieu
+Les Brisseaux
+des Anglades
+du Plantier
+de Lavalette
+de Lunesse
+Jules Verne
+de la Gatine - Appt n°27
+des Cerisiers
+69 RUE JULES DURANDEAU
+9 bis, rue Anatole France
+de la Grange
+Gambetta
+9 bis, rue Anatole France
+30 REMPART DE L'EST
+du Chêne Vert
+des Renardières
+6 rte de la Font Saint Martin
+4 RUE DU DR GILSON
+6 BIS BD D'AUVERGNE APPT 10 BAT C 1ER 2TAGE
+des Sablons
+79 AVENUE JULES FERRY
+Résidence du château - Place Jean Faure
+Résidence du château - Place Jean Faure
+gontran-labregere
+de la corderie
+Rue de l'anguillard
+2, rue Charles Coulomb
+2, rue Charles Coulomb
+2, rue Charles Coulomb
+2, rue Charles Coulomb
+2, rue Charles Coulomb
+2, rue Charles Coulomb
+de Paris
+Alfred de Vigny
+362 RUE DES CAPUCINES
+des Tilleuls
+du Petit Vouillac
+Léonide Lacroix
+des Bourguets
+du Treuil
+du Treuil
+294, rue de Périgueux
+des Meulières
+de Bourlion
+de Vars
+de Vars
+Froide
+17 rue guynemer
+12 Impasse des Gaudins
+9 RUE ALFRED LURAT
+11 RUE PASTEUR
+des Serres
+du Badoris
+du Badoris
+5 r du Puits
+DU PARC
+d  Angouleme
+Lotissement les Jésuites
+jean jaurès
+jean jaurès
+jean jaurès
+jean jaurès
+du Gont Pontouvre
+98 bld Liedot Appt RDC
+98 Blv Liedot appt rez de jardin
+15 RUE DU TUNNEL
+Lotissement Les Jardins de la Palene Lot 11
+RESIDENCE LE MOULIN DE VIMIERE - BAT A - APPT 22 87 RUE DE PARIS
+des Sports
+24 CHEMIN DES HIRONDELLES
+Jean Jaurès
+du 1er septembre 44
+113 r de Paris - appt 2
+113 r de Paris - appt 3
+Vieux BOURG
+des Vignes Jaunes
+Des trois notre dame
+Jules Ferry
+Lotissement L'Allée des Pins, Les Ouches
+12 Route d'Angouleme
+90, avenue de Montbron
+250 RUE DE CLERAC A SILLAC
+433 ROUTE DE BRAGETTE
+23 Rue St Ausone
+des Chataigniers
+111 rue de Paris
+5 Rue du clocher
+20 Impasse d'Austerlitz
+Hameau champs de Georges
+La Fontaine des Riffauds
+277 rue de Pérgueux
+Alfred Leyssenot
+Gambetta
+15 rue Joliot Curie
+de Chicoutimi
+Maurice Aulard
+de Bordeaux
+du Chanoine Morel
+Saint Roch
+de la Liberation
+passage Puybrandet
+Sauvaget
+184-186, route de Saint Jean d'Angléy
+186, route de Saint Jean d'Angély
+de Nersac
+38 Rue Jean Jaures
+44bis Rue Jean Jaurès
+18 RUE TOUTTIFAUT
+Paul Bert
+du General de Gaulle
+DES REMPARTS
+de Chantoiseau
+Bd Pasteur
+Impasse sous les Vignes
+263 bis Avenue du Géneral de Gaulle
+155 av Gambetta - 1er étage - appt 1
+de la Mairie
+13 Rue Aristide Briand
+67 Route des Fayards
+28 Rue Anatole France
+Claude Carnot
+de Basseau
+de Basseau
+de Basseau
+Claude Bonnier
+du pas de la vigne
+de Vars
+de Vars
+Du Beau Site
+de Champniers
+de chez Vasly
+Pierre Loti
+477 RUE EMILE ROUX
+RUE CHEZ COUCHAUD LAGROUX
+3 r du Puits de Pilon
+rue de la Gatine
+Angel Albert
+254 RUE DE TRANCHADE LES RIBONDAINES
+de Mouthiers
+20 BIS RUE LAUTRETTE
+François Villon
+Nouvelle
+14 Rue Victor Hugo
+Marie Gounin
+de Limoges
+des Remparts du Midi - Studio 2ème étage
+des Remparts du Midi - Studio Rdc
+des Remparts du Midi - Maison
+des Falaises
+du pas de la vigne
+cité Jean Petit
+Jean Charcot
+29 rte de Mouthiers
+Rue de Beauregard
+Maison n°1 - 34 rue de la Liberté - Allée des Jencos
+10 PLCE DU PALET APPARTEMENT N°4
+Joliot Curie
+Bernard Palissy
+5 Rue Gervais
+4 Rue de Beaulieu
+de Puybrandet
+de Puybrandet
+de Puybrandet
+24 Allée des Sports
+de Périgueux
+4 route du Cluzeau
+4 route du Cluzeau
+4 route du Cluzeau
+Route du Vieux Chêne Lieu Dit la Côte
+Marguerite d'Angouleme
+Pasteur
+de Chicoutimi
+des Coquelicots
+287 rue de la Ponche
+du Général Leclerc
+Rue Fayolle / Rue Maurice Ravel
+du Bon Saint Roch
+Rue de Chèvrefeuilles
+Fonchaudiere
+Fonchaudiere
+11 RUE RAYMOND AUDOUR - APPT 3
+Rés. de la Pommeraie
+2 RUE FROIDE
+40 rue de Quiers
+Rue Fayolle / Rue Maurice Ravel
+36-38 rue de Montmoreau
+Résidence Pléiade 1 Boulevard Jacques Monod
+2, rue Charles Coulomb
+2, rue Charles Coulomb
+2, rue Charles Coulomb
+7 rue Massillon
+des Hameaux de Fontastier
+d'Antornac
+d'Antornac
+d'Antornac
+des 4 Eviers
+609 RUE GEORGE ROUAULT
+4 IMPASSE PIERRE LOTI
+Louis Laurent
+Lotissement Les Allées de La Mondonne - Lot 13
+Les Petits Bois - Lot n°2 et A
+Logis de Nouère - Allée du Manoir
+des 3 fours
+de Paris
+Lotissement ''Les Vignes de la Touche''
+196 bis rue de la Grand Font
+Rue des Mesniers
+17 rue Lamartine
+18 PLACE MARENGO
+38 RUE JEAN CHABANEIX
+Rue Lavalette
+de Ruelle
+de Bel-Air
+Pierre Marie Curie
+50 r des Boissières - rdc
+62 Rue des Tulipiers
+6 Rue des Tilleuls
+134 Rue des Tulipiers
+Maurice Ravel
+Pasteur
+Jean et Constant Priolaud
+de Bretagne
+de la Gatine
+Les iles de Fleurac
+Logis de Nouère - Allée du Manoir
+86 RUE DE CLERAC A SILLAC
+203 RUE DE PARIS
+2 RUE BERNARD PALISSY
+Georges Clémenceau
+clos maine Brie
+37 rte de Guissalle
+Logis de Nouère - Allée du Manoir
+des Lilas - Appt 1er droite
+des Gots
+de l'Eglise
+12 Rue de l'hirondelle
+Lot les Hauts du Bourg
+Lotissement ''La Croix du Merle'' Lot 3
+de la République
+Jules Vernes
+319 RUE DE PERIGUEUX
+21 RUE DU LAVOIR
+15 RUE DE LA CAGOUILLE
+196 bis rue de la Grand Font
+du souvenir
+André Thevet
+des Petits Champs
+Alfred de Vigny
+Saint Roch
+de Montbron
+2 ROUTE DE HIERSAC
+Chemin du vieux maine le maine Joueau
+du General Leclerc
+de la Garenne
+86 Rue du gond
+de la Liberte
+de la Croix Lanauve
+de la Chataigneraie
+James Cook
+Safranière Les Forges
+42, avenue Gambetta app n° 1
+42, avenue Gambetta appt n°2
+42, avenue Gambetta appt n°3
+Puits Marot
+30, rue du Stade
+42, avenue Gambetta appt n°4
+Les Forges
+151, Route de Royan
+26 impasse de la Gounerie
+299 AVENUE DU GAL DE GAULLE
+Lotissement ''Le clos des Sablieres'' - Lot 4
+de Vars
+de la combe du cornier
+2 RUE DE LUNESSE 1ER ETAGE DROIT
+10 IMPASSE AU BUISSON
+20 RUE DE LA MONTEE DE VENAT
+de Royan
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Maurice Ravel
+Lotissement L'Allée des Pins Lot 7
+Lotissement allée des pins - Lot n°8
+de chenaud
+Représenté par Mme CHAVARIBEYRE Thérèse-34 Place de Chantoiseau
+56 rue d'Austerlitz
+56 rue d'Austerlitz
+56 rue d'Austerlitz
+56 rue d'Austerlitz
+56 rue d'Austerlitz
+56 rue d'Austerlitz
+9 RUE PIERRE ALBERT BIROT
+7 RUE PIERRE ALBERT BIROT
+de la santé
+41 les Hauts de Chantoiseau
+du Petit Bois
+62, route d'Angoulême
+de Garenne
+30 RUE LOUIS PERGAUD
+129 RUE LAVOISIER
+84 Rue de Montmoreau
+157 r de Basseau
+39, rue ancienne de Basseau - Résidence Le Panorama
+39 rue de la Belle Allée
+Thiers
+2 BIS RUE DOMREMY
+Lafarge
+15 rue Raymond Simard
+DE GENEVE
+DE GENEVE
+119 Rue saint Martin
+132 rue de Clérac à Sillac
+de Fours à Chaux
+33 rue de la Corderie
+du Taillandier
+Résidence Les cardinaux
+Henri Dunant - Bât. C - Appt 9
+de Vars
+des Ponts
+des peupliers
+Bourbonnaise
+Bourbonnaise
+du petit bois
+Bourbonnaise
+Bourbonnaise
+Bourbonnaise
+Bourbonnaise
+DE L'EGLISE
+13 RUE DU PONT VECHILLOT
+17 RUE LECLERC CHAUVIN
+12 Rue du 1er septembre
+du Canada
+Rue des Pensées
+Besson Bey - Studio Rdc Gauche
+2 RUE FROIDE
+1 Rue de la Mutualité
+25 rue de la Madeleine à l'étang
+1 RUE ABEL LAPLAGNE
+34 route d'Angoulème
+200 rue de Périgueux
+2 Impasse de l'Ecluse
+de la Gare
+14 rue des Blanchettes
+43 rue 8 mai 1945
+128 rue de Montbron
+Lieutenant Colonel Ferret
+8 ROUTE DE MONTIGNAC
+de Limoges
+Chantoiseau
+des souces
+ROGER SALENGRO
+du petit Puits
+du petit rochefort
+gontran
+7 RUE DU MAINE BRIE
+Lotissement La Falaise de l'Anguienne
+505 RUE DES MOULINS ARGENCE
+Appartement n°5 - 56 rue de Beaulieu
+Beausoleil
+du Champ de Foire
+Lotissement ''Le clos de la Vallade'' - Lot 3
+Lotissement ''Le Clos de la Vallade''
+1 rue des Platins Lotissement de l'Anguienne
+Appartement n°6 - 56 rue de Beaulieu
+de l'Ancien Four
+Champs du Cormier - Argence
+de saint Jean d'Angely
+des Rocs
+4 RUE DU MINAGE
+Bourbonnaise
+Bourbonnaise
+de l 'Ardoise
+Champs des Chaumes
+du Chapelot
+7, rue Planchet
+4, chemin du renclos
+25 Rues des Quinconces
+14 RUE DES CHENNEVIERES
+Rue Aristide BRIAND
+du Maréchal de Lattre de Tassigny
+9 bis rue des Brandes
+du Gond Pontouvre
+rte du Moulin à Vent
+6 rte des Fleurenceaux
+de la Medecine
+Rue vigier de la Pile
+1 RUE PIERRE LOTI
+3 RUE PIERRE LOTI
+Les Rossignols
+1 Impasse de la Chaume - Chez le Râle
+Chemin de l'Ecureuil
+204 Avenue Général de Gaulle
+393, rue du prévot - La prévotière
+Les Jardins de la Palène
+1 BD EMILE ROUX 2EME ETAGE
+des Arnauds
+Ampére
+Frederic Mistral
+23 impasse du Puybrandet
+du 1er Septembre 1944
+42 Rue Marcel Homon
+164 rue de Clérac à Sillac
+Chez Le Roi
+7 RUE CHATEAUBRUN
+8 RUE PASTEUR APPARTEMENT 3 SIUE AU REZ DE CHAUSSEE
+Abbé ROUSSELOT
+73 RUE RENE GOSCINY APPT 5
+37 Rue des Trois Fours
+37 Rue des Trois Fours
+37 Rue des Trois Fours
+37 Rue des Trois Fours
+Jeanne Jugan
+sous les vignes
+3 LOTISSEMENT CAPITAINE DU LAC
+7 RUE DU CANAL
+Résidence du Mas de la Pierre Levée
+26bis, rue du Château d'eau
+Neuillac
+Francis Louvel
+de la Tranchade
+Jean et Constant Priolaud
+9 allée des troenes
+21 Route de la Vigerie
+140 AVENUE DU GAL DE GAULLE
+Fontaine
+L'Allée des Pins lot n°31
+Marie GOUNIN
+de Montbron
+Appt n°3, 1er étage 162, boulevard de la République
+Jacques Prévert
+2 bis, rue de Montmoreau - 2me étage
+106 r de Clérac à Sillac
+380 AVENUE DE NAVARRE APPT N°2
+33 RUE MARCEL GASTON MERCIER BAT A - APPT 4
+108 rue des Mesniers - Les Mesniers
+108 rue des Mesniers - Les Mesniers
+Pierre Aumaitre
+4, route de Fontaine Cidex 127
+de Vars
+Maryse Bastier
+Marie Curie
+3 rue du 8 mai 1945
+196 ROUTE DE VARS
+des Lilas
+16 RUE MONLOGIS
+des Gibauds
+63bis r René Goscinny
+Ancienne de Basseau
+24, route de Blanzac
+Combes de Vouillac
+d'Alexandrie - Appt N°60
+d'Alexandrie
+21 ROUTE DES CEDRES LA BROUTERIE
+19 ALLEE DE LA COMBE CAILLOUX LOT N°15
+12 RUE DU SECOURS
+du Minage
+La Trésorière
+52 Route de la Couronne
+11 rue Georges Brassens
+des Carrieres
+357 rue de Basseau
+18 RUE PIERRE SEMARD
+Jean Antoine
+N° 5 Clos du Plantier
+Lotissement ''Les Jardins de la Palène'' - Lot 22
+Lotissement ''Le Clos des Sablières'' - Lot 8
+de Ségou - Appt N°39
+Rue des peupliers
+1230 rue Claude Bonnier
+921 ROUTE DE VILLARS
+51 RUE DU 8 MAI 1945
+Rue des Meulières
+du Cabarot
+32, rue des prés de la fontaine
+280 RUE LOUIS LUMIERE
+1 rue Jules Ferry
+134, Bd Liédot
+18 rue du général leclerc
+de la Combe Cailloux
+de Gond Pontouvre
+du Puits Marot
+de Becheline
+Mozart
+Hergé - Appt 4ème étage - Lot 204
+HERGE
+de la Combe cailloux
+Bellegarde - Appt N°2
+5 imp des Grands Bois
+Res. Marengo - 73 r Hergé - Appt 32 3e étage
+Lotissement ''La Prairie de Venat'' - Lot 13
+des Artisans
+Parmentier
+22 rue Bouillaud et Rue Fénelon
+des Moulins
+8 RUE PASTEUR APPARTEMENT 3 SIUE AU REZ DE CHAUSSEE
+35-37 route de Mougnac
+La Croix Ronde
+du Cdt Berger
+d'Alexandrie
+de Pisany
+de Pisany
+Rue des Sports   - Lot 4
+Henri Fauconnier
+75, rue st Ausone
+2 Rue Jean JAURES Appt n°1
+2 Rue Jean JAURES Appt n°2
+2 Rue Jean JAURES Appt n°3
+2 Rue Jean JAURES Appt n°4
+2 Rue Jean JAURES Appt n°5
+2 Rue Jean JAURES Appt n°7
+2 Rue Jean JAURES Appt n°8
+2 Rue Jean JAURES Appt n°9
+2 Rue Jean JAURES Appt n°10
+2 Rue Jean JAURES Appt n°11
+2 Rue Jean JAURES Appt n°12
+2 Rue Jean JAURES Appt n°13
+Rene Chabasse
+Lieu-dit: la combe de curtis
+Joseph Chaumette
+de la Gerbaude
+de Champ-Clos
+14 Lotissement Champ Pradeau
+20 RUE DE BELLAT APPT N° 4 - 2EME ETAGE
+de Lattre de Tassigny
+Madeleine Augeraud
+Ronsard - Bât. Ronsard - Appt n°1
+46 rte de Breuty
+62 rue Louise Lériget
+Les Souches
+de l'Arbalétrier
+de Beaumont
+174 RUE ARMAND JEAN
+21 bis Avenue de Bellevue
+des Sablieres
+457 ROUTE DE CHAMPNIERS
+Les Hauts de Puygrelier
+11 Place de la Gare
+Ronsard - Bâtiment Ronsard - Appt N°2
+Lotissement l'Allée du Pin
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+Allée de l'ancien stade et allée des pins
+3 CHEMIN DES COMBES
+67 RUE DE ST JEAN D' ANGELY
+10 ROUTE DE TORSAC
+25 Rue d'Iéna
+25 Rue d'Iéna
+24 rue Mairat
+des Cordonniers
+des Cordonniers
+de la Pleine
+73 RUE GOSCINY APPARTEMENT N°3 - 2EME ETAGE
+des Riffauds
+14 Rue Henri Barret - Le Maine Brie
+60 RUE DE COUBERTIN
+du Docteur BARRET
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Pierrieres
+Les hauts de  Puygrelier - Lot n°15
+des Gots
+des Gots
+des Gots
+117, avenue de Montbron
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+310, rue de Clérac à Sillac
+131, rue Waldeck Rousseau
+3 rue Samuel Champlain
+7 rue du Près Jolis
+12 Allée des Cèdres
+des Mesniers
+des Gots
+3 IMPASSE DU HAUT BOIS
+48 RESIDENCE BADORIS
+35 RUE AUSTERLITZ
+3 RUE RAOUL VERLET
+des Tilleuls
+DES GOTS
+DES GOTS
+DES GOTS
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+Chez Veau - 1316 rte des Deux Vallées
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+Jacques Prevert
+des Gots
+des Gots
+des Gots
+des Gots
+473 ROUTE DE CHAMPNIERS
+42 RUE LEONS GUMBERTEAU
+67 RUE DU GENERAL LECLERC APPT 2
+73 route de voeuil
+11 rue du Maréchal Leclerc
+du Blason
+des Gots
+des Gots
+des Gots
+des Gots
+DES GOTS
+DES GOTS
+DES GOTS
+DES GOTS
+DES GOTS
+GOTS
+GOTS
+GOTS
+GOTS
+GOTS
+GOTS
+GOTS
+GOTS
+GOTS
+170 rue de la Fontaine des Arnauds
+35, rue du Clair de Lune
+de la Bouchaudiere
+LUCIE VALORE
+Les Jardins de la Palène
+37 rue d'austerlitz
+Les Jardins de la Palène Saint Estephe
+de Paris
+de Paris
+du Gond Pontouvre
+87 - 95 Rue de Paris
+de la Gare
+de la Frérie
+2 Rue Jean JAURES Appt n°6
+des Trois Notre Dame
+15 RUE MARIE GOUNIN
+Jean Monnet
+des Gots
+La combe maison 2
+La combe maison 1
+des pins
+RDC GAUCHE - 26 allée de la Chataigneraie
+des Fontaines
+des groies de Fustifort
+de Ségou - Appt N°42
+ancienne de Basseau - Bât. B - Appt N°21
+de la Courade
+Edouard l'Escalier
+de Montbron - Appt Rdc
+de Montbron - Appt 1er étage
+3 PLACE DU PALET APPARTEMENT N°3
+86-88 RUE BELLAMY
+37 ROUTE DES FOURS A CHAUX
+Rouget de l'Isle
+des porches
+Victor Hugo
+de Nersac
+41 RUE DE LAVALETTE
+GOTS
+La combe maison 3
+13 RUE DES SOURCES
+Charcot
+des Gots
+des Gots
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+Rue Fayolle / Rue Maurice Ravel
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+des Gots
+de la République
+22 Route val de Charente
+13 route de Chateauneuf
+des Gots
+6, rue Corneille
+La Mondone
+Lotissement ''Les Jésuites''  - Lot 11
+chenevieres
+6, impasse Laudrie
+1 résidence les Grands Bois
+du Capitaine Favre
+Anatole France
+RESIDENCE PANORAMA 39 RUE DE BASSEAU
+1244 ROUTE CLAUDE BONNIER LES RASSATS
+des Pins
+Appartement Etage 1 - 17 rue de Lorraine
+de Tuteboeuf
+de la Combe à Bésine
+de la Combe à Bésine
+de la Combe à Bésine
+de la Combe à Bésine
+de la Combe à Bésine
+de la Combe à Bésine
+12 IMPASSE DES BAUDINS
+des Anglais
+111, rue Jean et Constant Priolaud
+Aristide Briand
+2 allée de Recoux
+70 bis rue Fontchaudière
+11 rue Léonce guimberteau
+27 BD DE BURY APPARTEMENT SITUE AU 3EME ETAGE GAUCHE
+de Tous Vents
+Lieu dit ''La Jaufertie'' Lot 1
+des Ronds Paillis
+Route des Gentils
+Champ des Raques
+10 chemin de la Croix Lanauve
+5 rue du Docteur Gilson
+Pasteur
+Appt 155 - Résidence Darras - Avenue de Lattre de Tassigny
+rue du jour
+de la République
+1 IMPASSE DES OUCHES
+51 RUE LEONARD JARRAUD STUDIO 1
+de Bel Air
+de l'Orient
+37 BIS RUE DU CHANOINE MOREL
+5ter chemin de Grelet, appt n°108
+115 RUE VAUGELINE
+76bis r de la Tourgarnier
+Besson Bey - Appt 2ème Gauche
+5 route de Rouillac
+d'Arcole
+Appartement RDC (Côté rue) - 56 rue de Beaulieu
+21 RUE ANGEL ALBERT
+jean et constant Priollaud
+21 rue des Boissières
+21 rue des Boissières
+21bis rue des Boissières
+Appartement ETG.1 - côté cour - 56 rue de Beaulieu
+Appartement n°7 - ETG 3 - 56 rue de Beaulieu
+136 ROUTE DE ROYAN
+PLACE DU VIGNON
+20 RUE EMILE LEGRAND
+19 Les Hauts de Fontenelle
+8, allées des Tanneries
+23 rue de Clérac à la Croix Lalaud
+41 rue Madeleine à L'Etang
+Waldeck Rousseau
+de Lavalette
+de Basseau
+Ancienne d'Angoulème
+825 route de la Mongerie Les Frottards
+56 route de la Pierre
+de Genève - Appt 2ème étage
+Gabriel Quement
+Résidence des Essarts - 1 chemin de Grelet Appartement 162 - 4ème étage
+ETG.1 - 169 rue Saint Roch
+26 RUE DES PETITS CHAMPS
+Chemin du Bourg au lac
+RESIDENCE PLANTIER DU HUITAIN 1 - APPT 13 BAT A RUE DES EPERVIERS
+Le petit pont
+de l'Epineuil
+Lot 15 Allée des pins
+124-126 ROUTE DE NERSAC APT 2
+124-126 ROUTE DE NERSAC APT 3
+124-126 ROUTE DE NERSAC APT 1
+124-126 ROUTE DE NERSAC APP 4
+124-126 ROUTE DE NERSAC
+5 rue de la croix Gersac
+Emile Legrand - Appt N°2
+Emile Legrand - Appt N°1
+Emile Legrand - Appt N°3
+4 bis cité des Agriers
+Pierre Aumaitre
+Pierre Albert Birot
+Georges Clemenceau
+48 route de Périgueux
+de Bois Blanc
+de Basseau
+du General de Gaulle
+Résidence du Jardin Vert Bat. Saintonge 4ème Etage - Appartement 89
+2 r de la Cigogne
+121 bd Thiers
+du Chanoine de Morel
+du Chanoine de Morel
+Monplaisir
+d'Auvergne
+Winston Churchill - Appt n°14
+1 CLOS DE BLANCHE PIERRE
+de la Grange
+Saint Martin
+Le Terrier
+46 rue de Beaulieu
+21 rue d u Fort de Vaux
+jules durandeau
+Place Anatole Audiat - Le Bourg
+Place Anatole Audiat - Le Bourg
+10 RUE DU MINAGE 1ER ETAGE
+5 ALLEE DU PETIT ETANG
+du grand maine
+de l'Ageasson
+de Baconneau
+du Colonel Campagne - Bât. B - Appt 2ème Gauche
+Joliot Curie
+189 rue Armand Jean
+de Pombreton
+6 PLACE DU CHAMP DE FOIRE
+du Manoir
+de la République
+Emile Legrand - Appt N°8
+Emile Legrand - Appt N°7
+Emile Legrand - Appt N°5
+Emile Legrand - Appt N°4
+Emile Legrand - Appt N° 6
+Maryse Bastier
+68 ROUTE DES FOURS A CHAUX
+38 RUE LEONS GUIMBERTEAU
+de La Mairie
+16 Route de Rouillac
+60, rue St Ausone
+Saint Pierre - Appt 1er étage
+3 impasse de la Fontaine
+119 rue Abbé Rousselot
+lot 10 les bois des cardinaux
+de la mutualité
+40 Route des Chaumes
+120 Bd Liédot
+18 rue de la Mission
+Emile Roux
+Edouard Escalier - Appt n°13
+du Vieux Pont
+3, Avenue des Maréchaux
+3, Avenue des Maréchaux
+13, rue de la Vergne
+de Quebec
+des Fougères
+de la Mairie
+de Montbron
+de l'Union
+de l'Union
+de l'Union
+de l'Union
+de l'Union
+de l'Union
+de l'Union
+de l'Union
+Rue des Pièces à l'Etang
+Résidence des Cardinaux - lot 22
+130 rte de St Jean d'Angely
+de Basseau
+279 rue Emile Roux
+2 RUE ANATOLE FRANCE
+300 rue des Pierrières
+43d, rue de l'Egalité
+43d, rue de l'Egalité
+Maison n°2 - 34 rue de la Liberté - Allée des Jencos
+du Petit Fresquet
+45 rue Georges Courteline
+3 RUE DU CANAL
+des Plantes
+90 rue Raspail
+Léonard Jarraud
+673 rue de la chapelle  Les Frauds
+12 RUE MASSILLON APPT N°1
+de Saintonge
+Appt. n°170 RDC 170 rue de Périgueux
+Appt. n°164 Etage 1 F2 164 rue de Périgueux
+Appt. n°164 Etage 1 F2 164 rue de Périgueux
+1 rue Victor Hugo
+29 rue de Sterling
+172 bis, rue de Limoges
+des Plantiers
+26 Rue de Verdun
+Impasse des Grands champs
+Marguerite De Valois
+27 RUE PASTEUR
+5 RUE LOMBRETTE
+42 RUE DENIS PAPIN
+Montauzier
+26 rue des Roullets
+Les Rossignols
+CITE DE LA BRULERIE 19 RUE ST EXUPERY
+Appartement Etage 1 - 17 rue de Lorraine
+Appartement Etage 1 - 17 rue de Lorraine
+Appartement Etage 1 - 17 rue de Lorraine
+Maison n°1 - rue du Terrier de Bourguignolles
+22 résidence du champ de la croix
+de la côte à Bournet
+106 RUE EMILE ROUX
+Victor Hugo
+de Mouthiers
+Lotissement ''Les Jardins de la Palène''
+7, chemin de l'Anguillard
+des Chatains
+de la Madeleine à l'Etang
+de chez le Râle
+de verdun
+146, route de Nersac
+20 rue du Peux
+de la Mairie
+4 RUE ST ROCH A LUNESSE
+du souvenir
+de Mouthiers
+Lotissement ''Résidence La Croix du chat'' - Lot 6
+Emile Roux
+4 RUE ST ROCH A LUNESSE
+Lot 23 l'allée des pins'' Lieu dit Les Ouches
+Lotissement résidence des Cardinaux
+rue de Mativo
+12 bis, chemin du Puybrandet RDC
+Jules Ferry
+12 bis, chemin du Puybrandet 1er étage
+1, passage du Puybrandet - RDC
+1, passage du Puybrandet
+1, rue du clos fleuri
+17 impasse du pont des tables
+1 chemin Bompart
+180 rue de Clérac a Sillac
+17 rue Juliot Curie
+4 Impasse du Rouvre
+Le Jardin Vert Bat Saintonge Appt 78
+LES DORIBEAUX
+RESIDENCE DU CENTRE COMMERCIAL - APPT 4 RUE EDMOND ROSTAN
+25 RUE DES ECHALIERS
+de Montmoreau
+de Montmoreau
+de Montmoreau
+de Montmoreau
+avenuede Lattre de Tassigny
+341 Route de Basseau
+2, rue des cinq journaux
+16 RUE DU CANADA
+7-9 RUE TRAVERSIERE DES CAPUCINS APT 1
+7-9 RUE TRAVERSIERE DES CAPUCINS APT 2
+7-9 RUE TRAVERSIERE DES CAPUCINS APT 3
+27 BD THIERS
+Lieu dit ''Le Bois des Chaumes''
+21 , Boulevard Aristide Briand
+21 , Boulevard Aristide Briand
+21 , Boulevard Aristide Briand
+21 , Boulevard Aristide Briand
+21 , Boulevard Aristide Briand
+21 , Boulevard Aristide Briand
+21 , Boulevard Aristide Briand
+21 , Boulevard Aristide Briand
+21 , Boulevard Aristide Briand
+21 , Boulevard Aristide Briand
+29 Rue Saint Ausone Résidence Sauvigné
+Lotissement ''Résidence du Pain Perdu''
+de Clérac à Sillac
+BD JACQUES MONOD RES PLEIADE 1 - BAT DU BELLAY - APPT 98
+de Lavalette - Appt n°13
+20, rue de Lignes
+4 chemin du lavoir
+5 Ter impasse du curé vincent BLANLOEUIL
+Les Hauts de Bramefont - Lot 4
+LE GRAND CHAMOULARD
+Lotissement des Cardinaux Lot 25
+de clérac à Sillac
+Lotissement Le Clos des Sablières Lot 10
+74, rue de la corderie 4ème étage
+de l'Auberge
+595, Rue des Souterrains Les Grimardières
+N° 3 Clos du Plantier Rue de la mairie
+120 RUE PERIGUEUX 1ER ETAGE
+ROUTE DES SABLES
+5 RAMPE BAILLARGE
+13 Place Docteur Barret
+1591-1595 route de la Vallée de la Nouère
+1591-1595 route de la Vallée de la Nouère
+d'Alexandrie - Appt N°62
+de Becheline - Appt 1er étage
+Résidence Les Jardins de Saint-Cybard
+Alfred de Vigny
+du Parc
+8 rue de la Plaine
+4 Rue du chateau du diable
+Rue du Cabarot
+182 route de Paris
+106 Rue Saint ausone
+22 RUE MONTREAL
+Bleriot
+Beausoleil
+10 Avenue du Général de Gaulle
+176 rue des Chouettes
+2, impasse Germaine Weller
+du Bearn
+23 RUE DES PEUPLIERS
+Claire Fontaine et Braconne
+Jean de la Fontaine
+11 rue de l'éveil
+René Chabasse  Appt n° 14
+de la Finée  Le Puy du Maine
+N°1 Clos du Plantier Rue de la Mairie
+N°1 Clos du Plantier Rue de la Mairie
+Le Maine Lafont
+Le Maine Lafont
+de la Rochandry
+Gontran Labregere
+17 Impasse de la Marne
+Lotissement allée des pins - lot n9
+Lotissement de la Palene
+5 Bd de la République
+Rue Chez Vasly
+18 Rue d'angoulême
+Fonchaudière
+21 bd d'Auvergne
+89 CHEMIN DES HIRONDELLES
+185, route de Vars
+185 bis, route de Vars
+de faours à chaux
+du Docteur Fournier
+Bâtiment A - appartement n° 12 9 rue du Docteur Fournier
+de Roullet - Les Terriers
+Athos
+des Tourterelles
+7 Avenue Christophe Colomb
+de la Frérie
+de la République
+Maurice Bouchord
+175 RUE ARMAND JEAN
+Jean Moulin
+Armand Jean
+34 av Jean Jaurès
+d'Arcole
+de Bellevue
+Lotissement ''Pain Perdu'' Lot 9
+5 Rue Fenelon
+3 Rue Fenelon
+3 Rue Fenelon
+6 rue Vauban
+6 rue Vauban
+6 rue Vauban
+6 rue Vauban
+42 rue du Bourg
+34, rue de la Liberation
+3, rue du Moulin Pombreton
+Cidex 118 PUYRENAUD
+Jean et Constant Prioleau
+44 Bis rue du Bourg
+42 Bis rue du Bourg
+91 Bis Rue de Montbron
+220 ROUTE DES SEGUINS
+Alfred de Vigny
+terre fiel
+des Bourdeix
+Lieu dit La Tureaude
+Lapéruse
+Hector Berlioz
+RESIDENCE LES PROVENCALES
+1, rue du Bosquet
+1, rue du Bosquet
+8 chemin de l'écureuil
+de la Veuze
+12 rue Guez de Blazac
+de Veuze
+Route du Vieux Chêne - La Côte
+2 rue des Vergnières
+Résidence de La Loire n°2 - Etage 2 - Appartement n°14
+5 RUE DE LA CAGOUILLE
+RESIDENCE LA CROIX ST CYBARD - APPT 213 RUE CHADOUTEAU
+Lot Clos de Pierre Blanche
+de la Braconne
+4 rue du Puits De Denin
+7 Rue de Pisany
+26 RUE DE LA CORDERIE SOUS SOL
+Résidence de La Loire n°2 - Etage 2 - Appartement n°14
+Rue de Longiesse
+du maine Joizeau
+des pièces à l'étang
+Salengro
+9 bis, rue Anatole France 1er étage
+61 ROUTE DE ST MICHEL
+158 AVENUE JULES FERRY
+7 RESIDENCE LA BOEME
+Gaudichaud
+10 REMPART DE L'EST 2EME ETAGE - APPT N°4
+de la Camoche
+Appartement 57, étage 7 - Résidence Moullin de Vinière - 93 rue de Paris
+du verger le mas
+d'Antornac
+d'Antornac
+d'Antornac
+d'Antornac
+DE BELLEVUE
+721 RUE DE LA FONTAINE DES RIFFAUDS
+Rue Pierre Lotti Résidence Pierre Lotti, Appt n°1
+Rue Pierre Lotti Résidence Pierre Lotti, Appt n°1
+les sablons Lotissement La Martine lot 3
+Magellan
+Lieu dit Le Petit Giget
+6 rue Aramis
+268 Route de Vars
+27 RUE DES BEZINES
+C de la Bussière
+d  Alexandrie
+Jacques Brel
+Saint Roch - Appt n°24
+12, rue des Sicauds
+Bâtiment B - appartement n° 12 9 rue du Docteur Fournier
+le bourg
+du général De Gaulle
+​
+
+.head
+
+
+
+
+
+
+Simple
+0
+19
+Python 3 (ipykernel) | Idle
