@@ -2,17 +2,20 @@ data = {'numero_dpe': [], 'type_voie': [],'nom_rue': [],'numero_rue': [],'commun
 df = pd.DataFrame(data)
 
 def has_numbers(inputString):
-    #verifie si il y a un chiffre dans l'adresse
+    # Vérifie s'il y a un chiffre dans l'adresse
     return any(char.isdigit() for char in inputString)
 
 def recuperation_adresse_correct(ligne):
     global df
-    #verifie si il y a un chiffre dans l'adresse
     
-    if has_numbers(ligne['nom_rue']) == False:
+    # Vérifie s'il y a un chiffre dans le champ 'nom_rue'
+    if not has_numbers(ligne['nom_rue']):
+        # Crée un dictionnaire avec les valeurs des champs de la ligne
         dictionnaire = {'numero_dpe': ligne["numero_dpe"] , 'type_voie': ligne["type_voie"] , 'nom_rue': ligne["nom_rue"] , 'numero_rue': ligne["numero_rue"] , 'commune': ligne["commune"]  ,'code_insee_commune': ligne["code_insee_commune"]}
-        data = pd.Series([dictionnaire])
-        df = df.append(data)
+        # Ajoute une nouvelle ligne au DataFrame df avec les valeurs du dictionnaire
+        df = df.append(dictionnaire, ignore_index=True)
+        # Retourne None car la variable data n'est pas utilisée
+        return None
     else:
-        pass
-    return  data
+        # Retourne None car la variable data n'est pas utilisée
+        return None
