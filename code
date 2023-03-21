@@ -1,1 +1,31 @@
-j'ai une base de donnee qui s'appel dpe et je voudrais parcourir dpe et pour chaque ligne affecter les valeurs des colones  'numero_dpe', 'type_voie','nom_rue','numero_rue','commune','code_insee_commune'  a un nouveau dataframe "df" qui contient. l'affectation se fait dans une fonction et les bases de donnes se trouvent a l'exterieur de la fonction 
+import pandas as pd
+
+# Chargement de la base de données
+dpe = pd.read_csv('chemin/vers/dpe.csv')
+
+# Définition de la fonction qui parcourt la base de données
+def parcourir_dpe(dpe):
+    # Création du nouveau DataFrame
+    df = pd.DataFrame(columns=['numero_dpe', 'type_voie', 'nom_rue', 'numero_rue', 'commune', 'code_insee_commune'])
+
+    # Parcours de la base de données
+    for index, row in dpe.iterrows():
+        # Récupération des valeurs des colonnes pour chaque ligne
+        numero_dpe = row['numero_dpe']
+        type_voie = row['type_voie']
+        nom_rue = row['nom_rue']
+        numero_rue = row['numero_rue']
+        commune = row['commune']
+        code_insee_commune = row['code_insee_commune']
+
+        # Ajout d'une ligne dans le nouveau DataFrame avec les valeurs récupérées
+        df.loc[index] = [numero_dpe, type_voie, nom_rue, numero_rue, commune, code_insee_commune]
+
+    # Retour du nouveau DataFrame
+    return df
+
+# Appel de la fonction avec la base de données "dpe"
+df = parcourir_dpe(dpe)
+
+# Affichage du nouveau DataFrame
+print(df)
