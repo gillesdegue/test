@@ -1,93 +1,18 @@
-
-Regex Address Parsing Python.
-
-
-jillesdegue@gmail.com
-
-Regex for Address Parsing.
-
-
-jillesdegue@gmail.com
-ecrit moi une expression regex pour chacun des cas suivants:
-
-- si j'ai une phrase: 117 BIS AVENUE DE LA REPUBLIQUE APPT 2
-je voudrais separe appt et ne numero de l'appartement qui est 2 dans ce cas precis du reste de la chaine de caractere
-tout en sachant que le numero de l'appartement vient toujours apres "appt" et que parfois il n y a pas de chiffre appt est parfois ecrit " Appt."
-
-- si j'ai une phrase 6 ROUTE D'AGRIS 2EME ETAGE je voudrais separer etage du numero qui peut etre juste le chiffre
-ou etre accompagné de "eme" sachant que le numero de l'etage vient parfois avant "etage" et parfois apres.
-
-- en tenant compte de ce j'ai dit plus haut, si j'ai une phrase 178 BOULEVARD DE LA REPUBLIQUE LOT 1
-je voudrais que tu enleve le lot et son numero
-
-- pour cette phrase 188 rue de la Grand Font  Apt. 1 - RDC enlever l'appartement est apt. et rdc veut dire rez de chaussée
-
--  ici 153 bis rue de Paris, Logement 11 separer logement et son numero
-En python
-
-Voici les expressions régulières en Python pour chaque cas:
-
-Pour séparer "Appt" et le numéro d'appartement:
-python
-Copy code
-import re
-
-phrase = "117 BIS AVENUE DE LA REPUBLIQUE APPT 2"
-regex_appt = r"(?i)appt\.?\s*(\d+)"
-match = re.search(regex_appt, phrase)
-if match:
-    num_appt = match.group(1)
-    phrase = re.sub(regex_appt, "", phrase)
-    print(phrase.strip(), num_appt)
-else:
-    print("Pas de numéro d'appartement trouvé.")
-Pour séparer "etage" et le numéro d'étage:
-python
-Copy code
-import re
-
-phrase = "6 ROUTE D'AGRIS 2EME ETAGE"
-regex_etage = r"(\d+)(?:eme)?\s+(?i)etage"
-match = re.search(regex_etage, phrase)
-if match:
-    num_etage = match.group(1)
-    phrase = re.sub(regex_etage, "", phrase)
-    print(phrase.strip(), num_etage)
-else:
-    print("Pas de numéro d'étage trouvé.")
-Pour enlever "lot" et son numéro:
-python
-Copy code
-import re
-
-phrase = "178 BOULEVARD DE LA REPUBLIQUE LOT 1"
-regex_lot = r"(?i)lot\s*\d+"
-phrase = re.sub(regex_lot, "", phrase)
-print(phrase.strip())
-Pour enlever "Apt." et interpréter "RDC" comme rez-de-chaussée:
-python
-Copy code
-import re
-
-phrase = "188 rue de la Grand Font Apt. 1 - RDC"
-regex_appt = r"(?i)apt\.?\s*\d+"
-regex_rdc = r"(?i)rdc"
-phrase = re.sub(regex_appt, "", phrase)
-phrase = re.sub(regex_rdc, "rez-de-chaussée", phrase)
-print(phrase.strip())
-Pour séparer "Logement" et son numéro:
-python
-Copy code
-import re
-
-phrase = "153 bis rue de Paris, Logement 11"
-regex_logement = r"(?i)logement\s+(\d+)"
-match = re.search(regex_logement, phrase)
-if match:
-    num_logement = match.group(1)
-    phrase = re.sub(regex_logement, "", phrase)
-    print(phrase.strip(), num_logement)
-else:
-    print("Pas de numéro de logement trouvé.")
-
-
+Je voudrais que tu me fasses un rapport sur la biodiversité dans les zones d’activités économiques ou zae.
+Fait le en te basant sur tes connaissances et sur les liens que je vais te fournir.
+Pour la partie d’introduction tu dois faire ressortir l’intérêt de la biodiversité dans les zae
+ Ensuite pour faire les le corps du rapport il faut que tu fasses un resume des différentes bases de donnes que je vais te citer ( n’hésite pas à rentrer dans les détails) :
+-	 J’ai utilisé les bases de donnes naruta2000 avec les zic,zps, les znieff (parle aussi de ce que je n’ai pas cité la mais que tu trouves important)
+-	La base de donne de la trame verte et bleu pour les cours d’eau, les corridors etc N_SRCE_COURS_EAU_S_000(pas présent)
+-	La base de donnée bd TOPO notamment la partir qui porte sur la végétation, Zones réglementées(Forêt publique, Parc ou réserve), . Occupation du sol( Haie ,Zone de végétation)
+Tu me fais un résume sur ce a quoi cert les base de données sur ce qu’elle contient, sur certains attributs que tu trouves pertinent( concentre toi sur celles qui ont un intérêt pour la biodiversité dans les zones d’activités économiques)
+Et pour finir fait des propositions sur les variables qui pourrait être intéressants a utilisé dans cette étude et pourquoi.
+Voici les liens :
+https://geoservices.ign.fr/sites/default/files/2023-01/DC_BDTOPO_3-3.pdf
+https://www.nord.gouv.fr/index.php/Actions-de-l-Etat/Environnement/Nature-et-biodiversite/Natura-2000/Natura-2000-ZPS-ZSC-SIC-DOCOB
+https://inpn.mnhn.fr/programme/natura2000/presentation/objectifs
+https://www.natura2000.fr/sites/default/files/references_bibliographiques/rapport_natura2000_tvb_juin2019.pdf
+https://www.trameverteetbleue.fr/sites/default/files/references_bibliographiques/16216_brochure-16p_trame-verte-et-bleue-outil-territoires_web_pap.pdf
+https://www.cote-dor.gouv.fr/IMG/pdf/zae.pdf
+https://datafoncier.cerema.fr/sites/datafoncier/files/inline-files/05_ZAE_plus_eco_en_foncier.pdf
+https://www.cerema.fr/system/files/documents/2022/01/2022_sobriete_fonciere_v2.pdf
