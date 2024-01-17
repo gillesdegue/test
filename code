@@ -1,15 +1,55 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-
-# Créer un objet options
-options = Options()
-# Ajouter des options selon vos besoins
-options.add_argument("--headless")
-options.add_argument("--disable-gpu")
-
-# Créer un objet service avec le chemin du driver
-service = Service("C:\\Users\\user\\Downloads\\chromedriver.exe")
-
-# Créer un objet WebDriver pour Chrome avec le service et les options
-driver = webdriver.Chrome(service=service, options=options)
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:600"></link>
+<style>
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600; /* semi bold */
+}
+th {
+  height:40px;
+  text-align:left;
+  border: none;
+  background-color: #e0e4e4;
+}
+td {
+  border: 2px solid  #e0e4e4;
+  border-collapse: collapse;
+}
+h2 {
+  text-align:center;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom:0px;
+}
+</style>
+</head>
+<body>
+<h2>ANNEXE - LISTE DES ETABLISSEMENTS</h2>
+<table>
+  <colgroup>
+    <col style="width: 1%;"></col>
+    <col style="width: 29%;"></col>
+    <col style="width: 30%;"></col>
+    <col style="width: 30%;"></col>
+    <col style="width: 10%;"></col>
+  </colgroup>
+  <tr>
+    <th>N°</th>
+    <th>Nom</th>
+    <th>Prénom</th>
+    <th>Nature</th>
+    <th>Adresse</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Dupont</td>
+    <td>Jean</td>
+    <td>Client</td>
+    <td>12 rue de la Paix, Paris</td>
+  </tr>
+  
+</table>
+</body>
+</html>
