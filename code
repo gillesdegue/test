@@ -1,53 +1,20 @@
-<html>
-<head>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:600">
-<style>
-table {
-border-color: #e0e4e4;
-  width: 100%;
-  border-collapse: collapse;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600; /* semi bold */
-}
-th {
-border-color: #e0e4e4;
-  height:40px;
-  text-align:left;
-  border: none;
-  background-color: #e0e4e4;
-}
-td {
-  border-color: #e0e4e4;
-  border: 2px solid black;
-  border-collapse: collapse;
-}
-</style>
-</head>
-<body>
-<h1>Tableau à six colonnes</h1>
-<table>
-  <colgroup>
-    <col style="width: 1%;">
-    <col style="width: 29%;">
-    <col style="width: 30%;">
-    <col style="width: 30%;">
-    <col style="width: 10%;">
-  </colgroup>
-  <tr>
-    <th>N°</th>
-    <th>Nom</th>
-    <th>Prénom</th>
-    <th>Nature</th>
-    <th>Adresse</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>Dupont</td>
-    <td>Jean</td>
-    <td>Client</td>
-    <td>12 rue de la Paix, Paris</td>
-  </tr>
-  
-</table>
-</body>
-</html>
+from selenium import webdriver
+import subprocess
+
+# Créer un objet WebDriver pour Chrome
+driver = webdriver.Chrome()
+
+# Ouvrir la page HTML à convertir
+driver.get('https://www.example.com')
+
+# Sauvegarder le HTML dans un fichier temporaire
+temp_file = 'temp.html'
+with open(temp_file, 'w', encoding='utf-8') as f:
+    f.write(driver.page_source)
+
+# Appeler wkhtmltopdf pour convertir le fichier HTML en PDF
+pdf_file = 'out.pdf'
+subprocess.run(['wkhtmltopdf', temp_file, pdf_file])
+
+# Fermer le WebDriver
+driver.quit()
