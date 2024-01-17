@@ -1,1 +1,46 @@
-Nous avons collaboré avec la Communauté d'agglomération - Grand Angoulême pour identifier les friches. Pendant cette collaboration, nous avons développé une méthodologie pour repérer les friches résidentielles, tandis qu'un prestataire s'est occupé des friches économiques. Bien que nous puissions reprendre la méthodologie d'identification des friches, nous ne sommes pas en mesure de nous engager sur une date. Si cela t'intéresse, je peux présenter le travail effectué à Grand Angoulême.
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th {
+  background-color: grey;
+}
+</style>
+</head>
+<body>
+<h1>Tableau à six colonnes</h1>
+<table>
+  <tr>
+    <th>N°</th>
+    <th>Nom</th>
+    <th>Prénom</th>
+    <th>Nature</th>
+    <th>Adresse</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Dupont</td>
+    <td>Jean</td>
+    <td>Client</td>
+    <td>12 rue de la Paix, Paris</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Martin</td>
+    <td>Marie</td>
+    <td>Fournisseur</td>
+    <td>8 avenue des Champs-Élysées, Paris</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Leclerc</td>
+    <td>Pierre</td>
+    <td>Employé</td>
+    <td>4 boulevard de la République, Bordeaux</td>
+  </tr>
+</table>
+</body>
+</html>
