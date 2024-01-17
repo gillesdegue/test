@@ -1,55 +1,35 @@
-<html>
-<head>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:600"></link>
-<style>
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600; /* semi bold */
-}
-th {
-  height:40px;
-  text-align:left;
-  border: none;
-  background-color: #e0e4e4;
-}
-td {
-  border: 2px solid  #e0e4e4;
-  border-collapse: collapse;
-}
-h2 {
-  text-align:center;
-  font-family: "Montserrat", sans-serif;
-  margin-bottom:0px;
-}
-</style>
-</head>
-<body>
-<h2>ANNEXE - LISTE DES ETABLISSEMENTS</h2>
-<table>
-  <colgroup>
-    <col style="width: 1%;"></col>
-    <col style="width: 29%;"></col>
-    <col style="width: 30%;"></col>
-    <col style="width: 30%;"></col>
-    <col style="width: 10%;"></col>
-  </colgroup>
-  <tr>
-    <th>N°</th>
-    <th>Nom</th>
-    <th>Prénom</th>
-    <th>Nature</th>
-    <th>Adresse</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>Dupont</td>
-    <td>Jean</td>
-    <td>Client</td>
-    <td>12 rue de la Paix, Paris</td>
-  </tr>
-  
-</table>
-</body>
-</html>
+# Importer la bibliothèque fpdf
+from fpdf import FPDF
+
+# Créer un objet PDF
+pdf = FPDF()
+
+# Ajouter une page
+pdf.add_page()
+
+# Définir la police et la taille
+pdf.set_font('helvetica', size=12)
+
+# Créer un titre centré
+pdf.cell(w=0, h=10, txt="ANNEXE - LISTE DES ETABLISSEMENTS", border=0, ln=1, align='C')
+
+# Créer un tableau avec des colonnes de largeurs différentes
+# Les largeurs sont exprimées en pourcentage de la largeur de la page
+col_widths = [0.01, 0.29, 0.3, 0.3, 0.1]
+
+# Créer une ligne d'en-tête avec un fond gris
+pdf.set_fill_color(224, 228, 228)
+pdf.set_font('helvetica', 'B', size=12) # police semi-grasse
+for i, header in enumerate(["N°", "Nom", "Prénom", "Nature", "Adresse"]):
+    pdf.cell(w=col_widths[i] * pdf.w, h=40, txt=header, border=0, ln=0, align='L', fill=True)
+pdf.ln(40) # passer à la ligne suivante
+
+# Créer une ligne de données avec des bordures
+pdf.set_font('helvetica', size=12) # police normale
+pdf.set_fill_color(255, 255, 255) # fond blanc
+for i, data in enumerate(["1", "Dupont", "Jean", "Client", "12 rue de la Paix, Paris"]):
+    pdf.cell(w=col_widths[i] * pdf.w, h=10, txt=data, border=1, ln=0, align='L', fill=True)
+pdf.ln(10) # passer à la ligne suivante
+
+# Enregistrer le PDF
+pdf.output("exemple.pdf")
