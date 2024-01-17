@@ -1,20 +1,15 @@
 from selenium import webdriver
-import subprocess
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 
-# Créer un objet WebDriver pour Chrome
-driver = webdriver.Chrome()
+# Créer un objet options
+options = Options()
+# Ajouter des options selon vos besoins
+options.add_argument("--headless")
+options.add_argument("--disable-gpu")
 
-# Ouvrir la page HTML à convertir
-driver.get('https://www.example.com')
+# Créer un objet service avec le chemin du driver
+service = Service("C:\\Users\\user\\Downloads\\chromedriver.exe")
 
-# Sauvegarder le HTML dans un fichier temporaire
-temp_file = 'temp.html'
-with open(temp_file, 'w', encoding='utf-8') as f:
-    f.write(driver.page_source)
-
-# Appeler wkhtmltopdf pour convertir le fichier HTML en PDF
-pdf_file = 'out.pdf'
-subprocess.run(['wkhtmltopdf', temp_file, pdf_file])
-
-# Fermer le WebDriver
-driver.quit()
+# Créer un objet WebDriver pour Chrome avec le service et les options
+driver = webdriver.Chrome(service=service, options=options)
