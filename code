@@ -1,11 +1,12 @@
 <html>
 <head>
 <style>
-table, th, td {
-  border: 1px solid black;
+table {
+  width: 100%;
   border-collapse: collapse;
 }
 th {
+  border: none;
   background-color: grey;
 }
 </style>
@@ -13,6 +14,13 @@ th {
 <body>
 <h1>Tableau à six colonnes</h1>
 <table>
+  <colgroup>
+    <col style="width: 10%;">
+    <col style="width: 20%;">
+    <col style="width: 30%;">
+    <col style="width: 30%;">
+    <col style="width: 10%;">
+  </colgroup>
   <tr>
     <th>N°</th>
     <th>Nom</th>
