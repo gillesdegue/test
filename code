@@ -38,9 +38,15 @@ pdf.ln(10) # passer à la ligne suivante
 # Créer une ligne de données avec des bordures
 pdf.set_font('AvenirLTProMedium', size=6) # police normale
 pdf.set_fill_color(255, 255, 255) # fond blanc
-for i, data in enumerate(["1", "51513059900209", "GROUPEMENT D'ACTEURS ASSOCIATIFS PARTENAIRES D'ACTION SOCIALE", "50 - 99", "1ébergement médicalisé pour adultes handicapés et autre hébergement médicalisé", "12 RUE LAVOISIER 91540 MENNECY"]):
+for i, data in enumerate(["1", "51513059900209", "GROUPEMENT D'ACTEURS ASSOCIATIFS \n PARTENAIRES D'ACTION SOCIALE", "50 - 99", "1ébergement médicalisé pour adultes handicapés et autre hébergement médicalisé", "12 RUE LAVOISIER 91540 MENNECY"]):
     pdf.cell(w=col_widths[i] * pdf.w, h=10, txt=data, border=1, ln=0, align='L', fill=True)
+    
 pdf.ln(10) # passer à la ligne suivante
-
+pdf.cell(w= 0.02 * pdf.w, h=10, txt="1", border=1, ln=0, align='L', fill=True)
+pdf.cell(w=0.12 * pdf.w, h=10, txt="51513059900209", border=1, ln=0, align='L', fill=True)
+pdf.cell(w=0.23 * pdf.w, h=10, txt="GROUPEMENT D'ACTEURS ASSOCIATIFS PARTENAIRES D'ACTION SOCIALE", border=1, ln=0, align='L', fill=True)
+pdf.cell(w=0.1 * pdf.w, h=10, txt="50 - 99", border=1, ln=0, align='L', fill=True)
+pdf.multi_cell(w=0.2 * pdf.w, h=10, txt="1ébergement médicalisé pour adultes handicapés et autre hébergement médicalisé", border=1, ln=0, align='L', fill=True)
+pdf.cell(w=0.05 * pdf.w, h=10, txt="12 RUE LAVOISIER 91540 MENNECY", border=1, ln=0, align='L', fill=True)
 # Enregistrer le PDF
 pdf.output("U:/DI/DINNOV/7_DATA/04_Portefeuille UC/04.1_Dataviz TI/Espace de travail Servan/Personnalisation AZAE/output_pdf_test/index.pdf")
