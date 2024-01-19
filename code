@@ -1,29 +1,30 @@
+import json
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
 
-# Chemin vers votre driver Chrome
-webdriver_path = '/chemin/vers/votre/driver/chrome'
+# Définir les paramètres pour l'impression en PDF
+settings = {
+    "recentDestinations": [{
+        "id": "Save as PDF",
+        "origin": "local",
+    }],
+    "selectedDestinationId": "Save as PDF",
+    "version": 2
+}
 
-# Créer une instance de Options
-chrome_options = Options()
+# Ajouter les paramètres à Chrome
+prefs = {'printing.print_preview_sticky_settings.appState': json.dumps(settings)}
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_experimental_option('prefs', prefs)
+chrome_options.add_argument('--kiosk-printing')
 
-# Ajouter l'option pour activer le mode sans tête
-chrome_options.add_argument("--headless")
+# Spécifier le chemin d'exportation
+prefs['savefile.default_directory'] = '/chemin/vers/votre/dossier'
 
-# Ajouter l'option pour définir le chemin de sortie du PDF
-chrome_options.add_argument("--print-to-pdf=/chemin/vers/votre/fichier.pdf")
+# Initialiser le WebDriver
+driver = webdriver.Chrome(chrome_options=chrome_options, executable_path='/chemin/vers/votre/chromedriver')
 
-# Créer une instance de Service
-service = Service(webdriver_path)
+# Ouvrir la page web
+driver.get("https://www.example.com")
 
-# Créer une instance de WebDriver
-driver = webdriver.Chrome(service=service, options=chrome_options)
-
-# Ouvrir la page locale
-driver.get('file:///chemin/vers/votre/page.html')
-
-# Fermer le WebDriver
-driver.quit()
+# Imprimer la page en PDF
+driver.execute_script('window.print();')
