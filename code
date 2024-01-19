@@ -1,27 +1,27 @@
-import json
 from selenium import webdriver
 
-# Définir les paramètres pour l'impression en PDF
-settings = {
-    "recentDestinations": [{
-        "id": "Save as PDF",
-        "origin": "local",
-    }],
-    "selectedDestinationId": "Save as PDF",
-    "version": 2
-}
-
-# Ajouter les paramètres à Chrome
-prefs = {'printing.print_preview_sticky_settings.appState': json.dumps(settings)}
+# Définir les options de Chrome
 chrome_options = webdriver.ChromeOptions()
-chrome_options.add_experimental_option('prefs', prefs)
-chrome_options.add_argument('--kiosk-printing')
 
 # Spécifier le chemin d'exportation
-prefs['savefile.default_directory'] = '/chemin/vers/votre/dossier'
+download_folder = "/chemin/vers/votre/dossier"
+
+# Ajouter les arguments nécessaires
+chrome_options.add_argument('--kiosk-printing')
+chrome_options.add_argument('--print-to-pdf')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+
+# Définir les préférences de Chrome
+prefs = {
+    'printing.print_preview_sticky_settings.appState': '{"recentDestinations": [{"id": "Save as PDF","origin": "local","account": ""}],"selectedDestinationId": "Save as PDF","version": 2}',
+    'savefile.default_directory': download_folder
+}
+
+chrome_options.add_experimental_option('prefs', prefs)
 
 # Initialiser le WebDriver
-driver = webdriver.Chrome(chrome_options=chrome_options, executable_path='/chemin/vers/votre/chromedriver')
+driver = webdriver.Chrome(options=chrome_options)
 
 # Ouvrir la page web
 driver.get("https://www.example.com")
