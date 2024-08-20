@@ -1,5 +1,4 @@
 from selenium import webdriver
-import json
 
 chrome_options = webdriver.ChromeOptions()
 settings = {
