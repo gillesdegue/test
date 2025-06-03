@@ -1,0 +1,7 @@
+à partir fichier contenant les marques et les models:
+- utiliser le script python pour voir les marques et pages existes:
+- ensuite cree les liens avec python pour automatiser la pagination et les mettres dans un fichier
+- ensuite utiliser l'extension chrome pour recumerer les donnees ( chaque jour)
+- si le fichier fait ressortir des nouveau, j'ajoute, si ce sont des anciens je zappe et si des anciens n'apparaissent plus j'utilise python pour aller verifier si la gage existe toujours ou si ça a ete vendu
+- en paralemme chercher un modele d'ia qui va lire mon ecran pour auromatiser ça a une certaine heur 
+- si concuant, creation de palteforme et pub sinon achat revente pour des vehicules pas cher
